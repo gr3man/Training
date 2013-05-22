@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		36DD48CC171267F100E70858 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36DD48CB171267F100E70858 /* UIKit.framework */; };
+		36DD48CE171267F100E70858 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36DD48CD171267F100E70858 /* Foundation.framework */; };
+		36DD48D0171267F100E70858 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36DD48CF171267F100E70858 /* CoreGraphics.framework */; };
+		36DD48D6171267F100E70858 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36DD48D4171267F100E70858 /* InfoPlist.strings */; };
+		36DD48D8171267F100E70858 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DD48D7171267F100E70858 /* main.m */; };
+		36DD48DC171267F100E70858 /* TEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DD48DB171267F100E70858 /* TEAppDelegate.m */; };
+		36DD48DF171267F100E70858 /* TEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DD48DE171267F100E70858 /* TEViewController.m */; };
+		36DD48E2171267F100E70858 /* TEViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36DD48E0171267F100E70858 /* TEViewController.xib */; };
+		C7F44F5B171280FC006131FC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7F44F5A171280FC006131FC /* Default-568h@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		36DD48C7171267F100E70858 /* Exercise 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Exercise 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36DD48CB171267F100E70858 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		36DD48CD171267F100E70858 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		36DD48CF171267F100E70858 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		36DD48D3171267F100E70858 /* Exercise 1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Exercise 1-Info.plist"; sourceTree = "<group>"; };
+		36DD48D5171267F100E70858 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		36DD48D7171267F100E70858 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		36DD48D9171267F100E70858 /* Exercise 1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Exercise 1-Prefix.pch"; sourceTree = "<group>"; };
+		36DD48DA171267F100E70858 /* TEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TEAppDelegate.h; sourceTree = "<group>"; };
+		36DD48DB171267F100E70858 /* TEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TEAppDelegate.m; sourceTree = "<group>"; };
+		36DD48DD171267F100E70858 /* TEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TEViewController.h; sourceTree = "<group>"; };
+		36DD48DE171267F100E70858 /* TEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TEViewController.m; sourceTree = "<group>"; };
+		36DD48E1171267F100E70858 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TEViewController.xib; sourceTree = "<group>"; };
+		C7F44F5A171280FC006131FC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36DD48C4171267F100E70858 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36DD48CC171267F100E70858 /* UIKit.framework in Frameworks */,
+				36DD48CE171267F100E70858 /* Foundation.framework in Frameworks */,
+				36DD48D0171267F100E70858 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		36DD48BC171267F100E70858 = {
+			isa = PBXGroup;
+			children = (
+				C7F44F5A171280FC006131FC /* Default-568h@2x.png */,
+				36DD48D1171267F100E70858 /* Exercise 1 */,
+				36DD48CA171267F100E70858 /* Frameworks */,
+				36DD48C8171267F100E70858 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		36DD48C8171267F100E70858 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36DD48C7171267F100E70858 /* Exercise 1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		36DD48CA171267F100E70858 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36DD48CB171267F100E70858 /* UIKit.framework */,
+				36DD48CD171267F100E70858 /* Foundation.framework */,
+				36DD48CF171267F100E70858 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36DD48D1171267F100E70858 /* Exercise 1 */ = {
+			isa = PBXGroup;
+			children = (
+				36DD48DA171267F100E70858 /* TEAppDelegate.h */,
+				36DD48DB171267F100E70858 /* TEAppDelegate.m */,
+				36DD48DD171267F100E70858 /* TEViewController.h */,
+				36DD48DE171267F100E70858 /* TEViewController.m */,
+				36DD48E0171267F100E70858 /* TEViewController.xib */,
+				36DD48D2171267F100E70858 /* Supporting Files */,
+			);
+			path = "Exercise 1";
+			sourceTree = "<group>";
+		};
+		36DD48D2171267F100E70858 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36DD48D3171267F100E70858 /* Exercise 1-Info.plist */,
+				36DD48D4171267F100E70858 /* InfoPlist.strings */,
+				36DD48D7171267F100E70858 /* main.m */,
+				36DD48D9171267F100E70858 /* Exercise 1-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		36DD48C6171267F100E70858 /* Exercise 1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36DD48E5171267F100E70858 /* Build configuration list for PBXNativeTarget "Exercise 1" */;
+			buildPhases = (
+				36DD48C3171267F100E70858 /* Sources */,
+				36DD48C4171267F100E70858 /* Frameworks */,
+				36DD48C5171267F100E70858 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Exercise 1";
+			productName = "Exercise 1";
+			productReference = 36DD48C7171267F100E70858 /* Exercise 1.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		36DD48BE171267F100E70858 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = 36DD48C1171267F100E70858 /* Build configuration list for PBXProject "Exercise 1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 36DD48BC171267F100E70858;
+			productRefGroup = 36DD48C8171267F100E70858 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36DD48C6171267F100E70858 /* Exercise 1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		36DD48C5171267F100E70858 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36DD48D6171267F100E70858 /* InfoPlist.strings in Resources */,
+				36DD48E2171267F100E70858 /* TEViewController.xib in Resources */,
+				C7F44F5B171280FC006131FC /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36DD48C3171267F100E70858 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36DD48D8171267F100E70858 /* main.m in Sources */,
+				36DD48DC171267F100E70858 /* TEAppDelegate.m in Sources */,
+				36DD48DF171267F100E70858 /* TEViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		36DD48D4171267F100E70858 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36DD48D5171267F100E70858 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		36DD48E0171267F100E70858 /* TEViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36DD48E1171267F100E70858 /* en */,
+			);
+			name = TEViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		36DD48E3171267F100E70858 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		36DD48E4171267F100E70858 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		36DD48E6171267F100E70858 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Exercise 1/Exercise 1-Prefix.pch";
+				INFOPLIST_FILE = "Exercise 1/Exercise 1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		36DD48E7171267F100E70858 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Exercise 1/Exercise 1-Prefix.pch";
+				INFOPLIST_FILE = "Exercise 1/Exercise 1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36DD48C1171267F100E70858 /* Build configuration list for PBXProject "Exercise 1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36DD48E3171267F100E70858 /* Debug */,
+				36DD48E4171267F100E70858 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36DD48E5171267F100E70858 /* Build configuration list for PBXNativeTarget "Exercise 1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36DD48E6171267F100E70858 /* Debug */,
+				36DD48E7171267F100E70858 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 36DD48BE171267F100E70858 /* Project object */;
+}
