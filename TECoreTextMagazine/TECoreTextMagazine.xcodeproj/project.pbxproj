@@ -1,0 +1,337 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C718B0D91740936100361380 /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = C718B0D81740936100361380 /* test.txt */; };
+		C718B0DC1740A51000361380 /* TECTColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = C718B0DB1740A50F00361380 /* TECTColumnView.m */; };
+		C7DF9BE8173CA44C00157227 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DF9BE7173CA44C00157227 /* UIKit.framework */; };
+		C7DF9BEA173CA44C00157227 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DF9BE9173CA44C00157227 /* Foundation.framework */; };
+		C7DF9BEC173CA44C00157227 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DF9BEB173CA44C00157227 /* CoreGraphics.framework */; };
+		C7DF9BF2173CA44C00157227 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7DF9BF0173CA44C00157227 /* InfoPlist.strings */; };
+		C7DF9BF4173CA44C00157227 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DF9BF3173CA44C00157227 /* main.m */; };
+		C7DF9BF8173CA44C00157227 /* TEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DF9BF7173CA44C00157227 /* TEAppDelegate.m */; };
+		C7DF9BFA173CA44C00157227 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C7DF9BF9173CA44C00157227 /* Default.png */; };
+		C7DF9BFC173CA44C00157227 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7DF9BFB173CA44C00157227 /* Default@2x.png */; };
+		C7DF9BFE173CA44C00157227 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7DF9BFD173CA44C00157227 /* Default-568h@2x.png */; };
+		C7DF9C01173CA44C00157227 /* TEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DF9C00173CA44C00157227 /* TEViewController.m */; };
+		C7DF9C04173CA44C00157227 /* TEViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7DF9C02173CA44C00157227 /* TEViewController.xib */; };
+		C7DF9C0B173CA45F00157227 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DF9C0A173CA45F00157227 /* CoreText.framework */; };
+		C7DF9C0E173CA48900157227 /* TECTView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DF9C0D173CA48900157227 /* TECTView.m */; };
+		C7DF9C34173CB47400157227 /* TEMarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DF9C33173CB47400157227 /* TEMarkupParser.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C718B0D81740936100361380 /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = test.txt; path = ../test.txt; sourceTree = "<group>"; };
+		C718B0DA1740A50F00361380 /* TECTColumnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TECTColumnView.h; sourceTree = "<group>"; };
+		C718B0DB1740A50F00361380 /* TECTColumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TECTColumnView.m; sourceTree = "<group>"; };
+		C7DF9BE4173CA44C00157227 /* TECoreTextMagazine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TECoreTextMagazine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7DF9BE7173CA44C00157227 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C7DF9BE9173CA44C00157227 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C7DF9BEB173CA44C00157227 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C7DF9BEF173CA44C00157227 /* TECoreTextMagazine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TECoreTextMagazine-Info.plist"; sourceTree = "<group>"; };
+		C7DF9BF1173CA44C00157227 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C7DF9BF3173CA44C00157227 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C7DF9BF5173CA44C00157227 /* TECoreTextMagazine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TECoreTextMagazine-Prefix.pch"; sourceTree = "<group>"; };
+		C7DF9BF6173CA44C00157227 /* TEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TEAppDelegate.h; sourceTree = "<group>"; };
+		C7DF9BF7173CA44C00157227 /* TEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TEAppDelegate.m; sourceTree = "<group>"; };
+		C7DF9BF9173CA44C00157227 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		C7DF9BFB173CA44C00157227 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		C7DF9BFD173CA44C00157227 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C7DF9BFF173CA44C00157227 /* TEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TEViewController.h; sourceTree = "<group>"; };
+		C7DF9C00173CA44C00157227 /* TEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TEViewController.m; sourceTree = "<group>"; };
+		C7DF9C03173CA44C00157227 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TEViewController.xib; sourceTree = "<group>"; };
+		C7DF9C0A173CA45F00157227 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		C7DF9C0C173CA48900157227 /* TECTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TECTView.h; sourceTree = "<group>"; };
+		C7DF9C0D173CA48900157227 /* TECTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TECTView.m; sourceTree = "<group>"; };
+		C7DF9C32173CB47400157227 /* TEMarkupParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMarkupParser.h; sourceTree = "<group>"; };
+		C7DF9C33173CB47400157227 /* TEMarkupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMarkupParser.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C7DF9BE1173CA44C00157227 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7DF9C0B173CA45F00157227 /* CoreText.framework in Frameworks */,
+				C7DF9BE8173CA44C00157227 /* UIKit.framework in Frameworks */,
+				C7DF9BEA173CA44C00157227 /* Foundation.framework in Frameworks */,
+				C7DF9BEC173CA44C00157227 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C7DF9BDB173CA44C00157227 = {
+			isa = PBXGroup;
+			children = (
+				C7DF9BED173CA44C00157227 /* TECoreTextMagazine */,
+				C7DF9BE6173CA44C00157227 /* Frameworks */,
+				C7DF9BE5173CA44C00157227 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C7DF9BE5173CA44C00157227 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7DF9BE4173CA44C00157227 /* TECoreTextMagazine.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C7DF9BE6173CA44C00157227 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7DF9C0A173CA45F00157227 /* CoreText.framework */,
+				C7DF9BE7173CA44C00157227 /* UIKit.framework */,
+				C7DF9BE9173CA44C00157227 /* Foundation.framework */,
+				C7DF9BEB173CA44C00157227 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7DF9BED173CA44C00157227 /* TECoreTextMagazine */ = {
+			isa = PBXGroup;
+			children = (
+				C718B0D81740936100361380 /* test.txt */,
+				C7DF9BF6173CA44C00157227 /* TEAppDelegate.h */,
+				C7DF9BF7173CA44C00157227 /* TEAppDelegate.m */,
+				C7DF9BFF173CA44C00157227 /* TEViewController.h */,
+				C7DF9C00173CA44C00157227 /* TEViewController.m */,
+				C7DF9C02173CA44C00157227 /* TEViewController.xib */,
+				C7DF9BEE173CA44C00157227 /* Supporting Files */,
+				C7DF9C0C173CA48900157227 /* TECTView.h */,
+				C7DF9C0D173CA48900157227 /* TECTView.m */,
+				C7DF9C32173CB47400157227 /* TEMarkupParser.h */,
+				C7DF9C33173CB47400157227 /* TEMarkupParser.m */,
+				C718B0DA1740A50F00361380 /* TECTColumnView.h */,
+				C718B0DB1740A50F00361380 /* TECTColumnView.m */,
+			);
+			path = TECoreTextMagazine;
+			sourceTree = "<group>";
+		};
+		C7DF9BEE173CA44C00157227 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C7DF9BEF173CA44C00157227 /* TECoreTextMagazine-Info.plist */,
+				C7DF9BF0173CA44C00157227 /* InfoPlist.strings */,
+				C7DF9BF3173CA44C00157227 /* main.m */,
+				C7DF9BF5173CA44C00157227 /* TECoreTextMagazine-Prefix.pch */,
+				C7DF9BF9173CA44C00157227 /* Default.png */,
+				C7DF9BFB173CA44C00157227 /* Default@2x.png */,
+				C7DF9BFD173CA44C00157227 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C7DF9BE3173CA44C00157227 /* TECoreTextMagazine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7DF9C07173CA44C00157227 /* Build configuration list for PBXNativeTarget "TECoreTextMagazine" */;
+			buildPhases = (
+				C7DF9BE0173CA44C00157227 /* Sources */,
+				C7DF9BE1173CA44C00157227 /* Frameworks */,
+				C7DF9BE2173CA44C00157227 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TECoreTextMagazine;
+			productName = TECoreTextMagazine;
+			productReference = C7DF9BE4173CA44C00157227 /* TECoreTextMagazine.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C7DF9BDC173CA44C00157227 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TE;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Tuấn Nguyễn Anh";
+			};
+			buildConfigurationList = C7DF9BDF173CA44C00157227 /* Build configuration list for PBXProject "TECoreTextMagazine" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C7DF9BDB173CA44C00157227;
+			productRefGroup = C7DF9BE5173CA44C00157227 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C7DF9BE3173CA44C00157227 /* TECoreTextMagazine */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C7DF9BE2173CA44C00157227 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7DF9BF2173CA44C00157227 /* InfoPlist.strings in Resources */,
+				C7DF9BFA173CA44C00157227 /* Default.png in Resources */,
+				C7DF9BFC173CA44C00157227 /* Default@2x.png in Resources */,
+				C7DF9BFE173CA44C00157227 /* Default-568h@2x.png in Resources */,
+				C7DF9C04173CA44C00157227 /* TEViewController.xib in Resources */,
+				C718B0D91740936100361380 /* test.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C7DF9BE0173CA44C00157227 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7DF9BF4173CA44C00157227 /* main.m in Sources */,
+				C7DF9BF8173CA44C00157227 /* TEAppDelegate.m in Sources */,
+				C7DF9C01173CA44C00157227 /* TEViewController.m in Sources */,
+				C7DF9C0E173CA48900157227 /* TECTView.m in Sources */,
+				C7DF9C34173CB47400157227 /* TEMarkupParser.m in Sources */,
+				C718B0DC1740A51000361380 /* TECTColumnView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C7DF9BF0173CA44C00157227 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7DF9BF1173CA44C00157227 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C7DF9C02173CA44C00157227 /* TEViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7DF9C03173CA44C00157227 /* en */,
+			);
+			name = TEViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C7DF9C05173CA44C00157227 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		C7DF9C06173CA44C00157227 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C7DF9C08173CA44C00157227 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TECoreTextMagazine/TECoreTextMagazine-Prefix.pch";
+				INFOPLIST_FILE = "TECoreTextMagazine/TECoreTextMagazine-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C7DF9C09173CA44C00157227 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TECoreTextMagazine/TECoreTextMagazine-Prefix.pch";
+				INFOPLIST_FILE = "TECoreTextMagazine/TECoreTextMagazine-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C7DF9BDF173CA44C00157227 /* Build configuration list for PBXProject "TECoreTextMagazine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7DF9C05173CA44C00157227 /* Debug */,
+				C7DF9C06173CA44C00157227 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7DF9C07173CA44C00157227 /* Build configuration list for PBXNativeTarget "TECoreTextMagazine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7DF9C08173CA44C00157227 /* Debug */,
+				C7DF9C09173CA44C00157227 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C7DF9BDC173CA44C00157227 /* Project object */;
+}

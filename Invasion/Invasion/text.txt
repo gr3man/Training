@@ -1,0 +1,6 @@
+The Core Text framework is a low-level technology which Apple defines as a text drawing engine. Core Text is not meant to replace the Cocoa text system. If you can deal with high-level constructs, you’d better use Cocoa. So, for example, if you need to display small amounts of text, just use UITextField. If you need to display a larger text, use UITextView. You don’t need much code and is easier to implement.
+
+At this point, you could ask me: “Hey, wait a second! Why should I use Core Text for, if Cocoa offers me plenty of easier solutions to handle text?”. Well, you should be using Core Text, if you need to render text in a very special way (for example, around or inside a shape) or to import your fonts or if you want to draw mixed-style text. You should also consider using Core Text, when you want to display web content and the UIWebView class is a real limitation of what you want to achieve.
+
+In those cases, you will need to dig into the Core Text framework and that’s exactly what I want to show you here. Core Text provides different levels of usage, meaning that it comes with high-level objects, which allow you to draw simple things in an easy way, but it has also low-level objects, which allow you to draw complex text composition and are harder to use.
+
