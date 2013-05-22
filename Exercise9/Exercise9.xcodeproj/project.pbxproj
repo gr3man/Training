@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C7078ACE174CB60900DEC740 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7078ACD174CB60900DEC740 /* UIKit.framework */; };
+		C7078AD0174CB60900DEC740 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7078ACF174CB60900DEC740 /* Foundation.framework */; };
+		C7078AD2174CB60900DEC740 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7078AD1174CB60900DEC740 /* CoreGraphics.framework */; };
+		C7078AD8174CB60900DEC740 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7078AD6174CB60900DEC740 /* InfoPlist.strings */; };
+		C7078ADA174CB60900DEC740 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7078AD9174CB60900DEC740 /* main.m */; };
+		C7078ADE174CB60900DEC740 /* TEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7078ADD174CB60900DEC740 /* TEAppDelegate.m */; };
+		C7078AE0174CB60900DEC740 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C7078ADF174CB60900DEC740 /* Default.png */; };
+		C7078AE2174CB60900DEC740 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7078AE1174CB60900DEC740 /* Default@2x.png */; };
+		C7078AE4174CB60900DEC740 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7078AE3174CB60900DEC740 /* Default-568h@2x.png */; };
+		C7078AE7174CB60900DEC740 /* TEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7078AE6174CB60900DEC740 /* TEViewController.m */; };
+		C7078AEA174CB60900DEC740 /* TEViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7078AE8174CB60900DEC740 /* TEViewController.xib */; };
+		C7078AF1174CB63C00DEC740 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7078AF0174CB63C00DEC740 /* MapKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C7078ACA174CB60900DEC740 /* Exercise9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exercise9.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7078ACD174CB60900DEC740 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C7078ACF174CB60900DEC740 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C7078AD1174CB60900DEC740 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C7078AD5174CB60900DEC740 /* Exercise9-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Exercise9-Info.plist"; sourceTree = "<group>"; };
+		C7078AD7174CB60900DEC740 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C7078AD9174CB60900DEC740 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C7078ADB174CB60900DEC740 /* Exercise9-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Exercise9-Prefix.pch"; sourceTree = "<group>"; };
+		C7078ADC174CB60900DEC740 /* TEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TEAppDelegate.h; sourceTree = "<group>"; };
+		C7078ADD174CB60900DEC740 /* TEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TEAppDelegate.m; sourceTree = "<group>"; };
+		C7078ADF174CB60900DEC740 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		C7078AE1174CB60900DEC740 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		C7078AE3174CB60900DEC740 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C7078AE5174CB60900DEC740 /* TEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TEViewController.h; sourceTree = "<group>"; };
+		C7078AE6174CB60900DEC740 /* TEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TEViewController.m; sourceTree = "<group>"; };
+		C7078AE9174CB60900DEC740 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TEViewController.xib; sourceTree = "<group>"; };
+		C7078AF0174CB63C00DEC740 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C7078AC7174CB60900DEC740 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7078AF1174CB63C00DEC740 /* MapKit.framework in Frameworks */,
+				C7078ACE174CB60900DEC740 /* UIKit.framework in Frameworks */,
+				C7078AD0174CB60900DEC740 /* Foundation.framework in Frameworks */,
+				C7078AD2174CB60900DEC740 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C7078AC1174CB60900DEC740 = {
+			isa = PBXGroup;
+			children = (
+				C7078AD3174CB60900DEC740 /* Exercise9 */,
+				C7078ACC174CB60900DEC740 /* Frameworks */,
+				C7078ACB174CB60900DEC740 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C7078ACB174CB60900DEC740 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7078ACA174CB60900DEC740 /* Exercise9.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C7078ACC174CB60900DEC740 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7078AF0174CB63C00DEC740 /* MapKit.framework */,
+				C7078ACD174CB60900DEC740 /* UIKit.framework */,
+				C7078ACF174CB60900DEC740 /* Foundation.framework */,
+				C7078AD1174CB60900DEC740 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7078AD3174CB60900DEC740 /* Exercise9 */ = {
+			isa = PBXGroup;
+			children = (
+				C7078ADC174CB60900DEC740 /* TEAppDelegate.h */,
+				C7078ADD174CB60900DEC740 /* TEAppDelegate.m */,
+				C7078AE5174CB60900DEC740 /* TEViewController.h */,
+				C7078AE6174CB60900DEC740 /* TEViewController.m */,
+				C7078AE8174CB60900DEC740 /* TEViewController.xib */,
+				C7078AD4174CB60900DEC740 /* Supporting Files */,
+			);
+			path = Exercise9;
+			sourceTree = "<group>";
+		};
+		C7078AD4174CB60900DEC740 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C7078AD5174CB60900DEC740 /* Exercise9-Info.plist */,
+				C7078AD6174CB60900DEC740 /* InfoPlist.strings */,
+				C7078AD9174CB60900DEC740 /* main.m */,
+				C7078ADB174CB60900DEC740 /* Exercise9-Prefix.pch */,
+				C7078ADF174CB60900DEC740 /* Default.png */,
+				C7078AE1174CB60900DEC740 /* Default@2x.png */,
+				C7078AE3174CB60900DEC740 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C7078AC9174CB60900DEC740 /* Exercise9 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7078AED174CB60900DEC740 /* Build configuration list for PBXNativeTarget "Exercise9" */;
+			buildPhases = (
+				C7078AC6174CB60900DEC740 /* Sources */,
+				C7078AC7174CB60900DEC740 /* Frameworks */,
+				C7078AC8174CB60900DEC740 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Exercise9;
+			productName = Exercise9;
+			productReference = C7078ACA174CB60900DEC740 /* Exercise9.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C7078AC2174CB60900DEC740 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TE;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Tuấn Nguyễn Anh";
+			};
+			buildConfigurationList = C7078AC5174CB60900DEC740 /* Build configuration list for PBXProject "Exercise9" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C7078AC1174CB60900DEC740;
+			productRefGroup = C7078ACB174CB60900DEC740 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C7078AC9174CB60900DEC740 /* Exercise9 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C7078AC8174CB60900DEC740 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7078AD8174CB60900DEC740 /* InfoPlist.strings in Resources */,
+				C7078AE0174CB60900DEC740 /* Default.png in Resources */,
+				C7078AE2174CB60900DEC740 /* Default@2x.png in Resources */,
+				C7078AE4174CB60900DEC740 /* Default-568h@2x.png in Resources */,
+				C7078AEA174CB60900DEC740 /* TEViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C7078AC6174CB60900DEC740 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7078ADA174CB60900DEC740 /* main.m in Sources */,
+				C7078ADE174CB60900DEC740 /* TEAppDelegate.m in Sources */,
+				C7078AE7174CB60900DEC740 /* TEViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C7078AD6174CB60900DEC740 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7078AD7174CB60900DEC740 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C7078AE8174CB60900DEC740 /* TEViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7078AE9174CB60900DEC740 /* en */,
+			);
+			name = TEViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C7078AEB174CB60900DEC740 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C7078AEC174CB60900DEC740 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C7078AEE174CB60900DEC740 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Exercise9/Exercise9-Prefix.pch";
+				INFOPLIST_FILE = "Exercise9/Exercise9-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C7078AEF174CB60900DEC740 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Exercise9/Exercise9-Prefix.pch";
+				INFOPLIST_FILE = "Exercise9/Exercise9-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C7078AC5174CB60900DEC740 /* Build configuration list for PBXProject "Exercise9" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7078AEB174CB60900DEC740 /* Debug */,
+				C7078AEC174CB60900DEC740 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7078AED174CB60900DEC740 /* Build configuration list for PBXNativeTarget "Exercise9" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7078AEE174CB60900DEC740 /* Debug */,
+				C7078AEF174CB60900DEC740 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C7078AC2174CB60900DEC740 /* Project object */;
+}
