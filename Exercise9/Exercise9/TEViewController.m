@@ -17,6 +17,9 @@
 @synthesize mapv;
 @synthesize toolBar;
 @synthesize zoomBar;
+@synthesize start;
+@synthesize end;
+@synthesize polyLine;
 CLLocationCoordinate2D annotaitonCoords[2];
 
 - (void)viewDidLoad
@@ -47,14 +50,14 @@ CLLocationCoordinate2D annotaitonCoords[2];
     
     annotaitonCoords[0].latitude = 21.005140;
     annotaitonCoords[0].longitude = 105.743011;
-    TEMapPin *start = [[TEMapPin alloc] init];
+    start = [[TEMapPin alloc] init];
     start.coordinate =annotaitonCoords[0];
     start.title = @"Start Point";
     start.subtitle = @"This is where we started!";
     
     annotaitonCoords[1].latitude = 21.005140;
     annotaitonCoords[1].longitude = 105.943011;
-    TEMapPin *end = [[TEMapPin alloc] init];
+    end = [[TEMapPin alloc] init];
     end.coordinate =annotaitonCoords[1];
     end.title = @"End Point";
     end.subtitle = @"This is where we finished!";
@@ -62,7 +65,7 @@ CLLocationCoordinate2D annotaitonCoords[2];
     [mapv addAnnotation:start];
     [mapv addAnnotation:end];
     
-    MKPolyline *polyLine = [MKPolyline polylineWithCoordinates:annotaitonCoords count:2];
+    polyLine = [MKPolyline polylineWithCoordinates:annotaitonCoords count:2];
     [mapv addOverlay:polyLine];
     
     //MKCoordinateSpan span = MKCoordinateSpanMake(0.5, 0.5);
@@ -86,7 +89,7 @@ CLLocationCoordinate2D annotaitonCoords[2];
 }
 
 - (void) mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
-    self.mapv.centerCoordinate = userLocation.location.coordinate;
+    mapv.centerCoordinate = userLocation.location.coordinate;
 }
 
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
@@ -115,6 +118,18 @@ CLLocationCoordinate2D annotaitonCoords[2];
         return line;
     }
     return nil;
+}
+
+- (void) mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view didChangeDragState:(MKAnnotationViewDragState)newState fromOldState:(MKAnnotationViewDragState)oldState
+{
+    if (newState == MKAnnotationViewDragStateEnding)
+    {
+        annotaitonCoords[0] = start.coordinate;
+        annotaitonCoords[1] = end.coordinate;
+        [mapv removeOverlay:polyLine];
+        polyLine = [MKPolyline polylineWithCoordinates:annotaitonCoords count:2];
+        [mapv addOverlay:polyLine];
+    }
 }
 
 - (void)didReceiveMemoryWarning

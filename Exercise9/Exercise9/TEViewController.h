@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "TEMapPin.h"
 
 @interface TEViewController : UIViewController <MKMapViewDelegate>
 
@@ -19,6 +20,9 @@
 @property (strong, nonatomic) IBOutlet UISlider *zoomBar;
 @property (strong, nonatomic) IBOutlet MKMapView *mapv;
 @property (strong, nonatomic) IBOutlet UIToolbar *toolBar;
+@property (strong, nonatomic) TEMapPin *start;
+@property (strong, nonatomic) TEMapPin *end;
+@property (strong, nonatomic) MKPolyline *polyLine;
 
 - (IBAction)zoomMap:(UISlider *)sender;
 @end
