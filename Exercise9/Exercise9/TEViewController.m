@@ -7,6 +7,7 @@
 //
 
 #import "TEViewController.h"
+#import "TEMapPin.h"
 
 @interface TEViewController ()
 
@@ -16,7 +17,7 @@
 @synthesize mapv;
 @synthesize toolBar;
 @synthesize zoomBar;
-CLLocationCoordinate2D annotaitonCoord;
+CLLocationCoordinate2D annotaitonCoords[2];
 
 - (void)viewDidLoad
 {
@@ -37,24 +38,35 @@ CLLocationCoordinate2D annotaitonCoord;
     toolBar.items = buttons;
     
     //annotaitonCoord = CLLocationCoordinate2DMake(21.037884,105.850182);
-    annotaitonCoord.latitude = 21.006137;
-    annotaitonCoord.longitude = 105.843011;
-    MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
-    annotationPoint.coordinate = annotaitonCoord;
-    annotationPoint.title = @"Ha Noi";
-    annotationPoint.subtitle = @"HaNoi University of Technology";
+//    annotaitonCoord.latitude = 21.006137;
+//    annotaitonCoord.longitude = 105.843011;
+//    MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
+//    annotationPoint.coordinate = annotaitonCoord;
+//    annotationPoint.title = @"Ha Noi";
+//    annotationPoint.subtitle = @"HaNoi University of Technology";
     
-    annotaitonCoord.latitude = 21.006140;
-    annotaitonCoord.longitude = 105.843011;
-    MKPointAnnotation *annotationPoint1 = [[MKPointAnnotation alloc] init];
-    annotationPoint1.coordinate = annotaitonCoord;
-    annotationPoint1.title = @"Ha Noi";
-    annotationPoint1.subtitle = @"HaNoi University";
+    annotaitonCoords[0].latitude = 21.005140;
+    annotaitonCoords[0].longitude = 105.743011;
+    TEMapPin *start = [[TEMapPin alloc] init];
+    start.coordinate =annotaitonCoords[0];
+    start.title = @"Start Point";
+    start.subtitle = @"This is where we started!";
     
-    [mapv addAnnotation:annotationPoint];
-    [mapv addAnnotation:annotationPoint1];
+    annotaitonCoords[1].latitude = 21.005140;
+    annotaitonCoords[1].longitude = 105.943011;
+    TEMapPin *end = [[TEMapPin alloc] init];
+    end.coordinate =annotaitonCoords[1];
+    end.title = @"End Point";
+    end.subtitle = @"This is where we finished!";
+    
+    [mapv addAnnotation:start];
+    [mapv addAnnotation:end];
+    
+    MKPolyline *polyLine = [MKPolyline polylineWithCoordinates:annotaitonCoords count:2];
+    [mapv addOverlay:polyLine];
+    
     //MKCoordinateSpan span = MKCoordinateSpanMake(0.5, 0.5);
-    MKCoordinateRegion hanoi = MKCoordinateRegionMakeWithDistance(annotaitonCoord, zoomBar.value * 10000, zoomBar.value * 10000);
+    MKCoordinateRegion hanoi = MKCoordinateRegionMakeWithDistance(annotaitonCoords[0], zoomBar.value * 10000, zoomBar.value * 10000);
     [mapv setRegion:hanoi];
 }
 
@@ -92,6 +104,17 @@ CLLocationCoordinate2D annotaitonCoord;
     }
     
     return pav;
+}
+
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
+{
+    if ([overlay isKindOfClass:[MKPolyline class]]) {
+        MKPolylineView *line = [[MKPolylineView alloc] initWithPolyline:overlay];
+        line.lineWidth = 3;
+        line.strokeColor = [[UIColor blueColor] colorWithAlphaComponent:0.7];
+        return line;
+    }
+    return nil;
 }
 
 - (void)didReceiveMemoryWarning

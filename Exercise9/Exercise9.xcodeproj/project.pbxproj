@@ -19,6 +19,7 @@
 		C7078AE7174CB60900DEC740 /* TEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7078AE6174CB60900DEC740 /* TEViewController.m */; };
 		C7078AEA174CB60900DEC740 /* TEViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7078AE8174CB60900DEC740 /* TEViewController.xib */; };
 		C7078AF1174CB63C00DEC740 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7078AF0174CB63C00DEC740 /* MapKit.framework */; };
+		C7D353041757C1C100C86F34 /* TEMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D353031757C1C100C86F34 /* TEMapPin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		C7078AE6174CB60900DEC740 /* TEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TEViewController.m; sourceTree = "<group>"; };
 		C7078AE9174CB60900DEC740 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TEViewController.xib; sourceTree = "<group>"; };
 		C7078AF0174CB63C00DEC740 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C7D353021757C1C100C86F34 /* TEMapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMapPin.h; sourceTree = "<group>"; };
+		C7D353031757C1C100C86F34 /* TEMapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMapPin.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 				C7078AE6174CB60900DEC740 /* TEViewController.m */,
 				C7078AE8174CB60900DEC740 /* TEViewController.xib */,
 				C7078AD4174CB60900DEC740 /* Supporting Files */,
+				C7D353021757C1C100C86F34 /* TEMapPin.h */,
+				C7D353031757C1C100C86F34 /* TEMapPin.m */,
 			);
 			path = Exercise9;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 				C7078ADA174CB60900DEC740 /* main.m in Sources */,
 				C7078ADE174CB60900DEC740 /* TEAppDelegate.m in Sources */,
 				C7078AE7174CB60900DEC740 /* TEViewController.m in Sources */,
+				C7D353041757C1C100C86F34 /* TEMapPin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +309,7 @@
 				C7078AEF174CB60900DEC740 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
