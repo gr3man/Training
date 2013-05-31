@@ -43,5 +43,6 @@ typedef enum {
 - (bool)isLeapYear;
 - (NSString *) stringForLabel;
 - (IBAction)valueChanged:(UISlider *)sender;
+- (void) changeLocation:(UIInterfaceOrientation)orient ;
 
 @end

@@ -13,17 +13,18 @@
 @end
 
 @implementation TEViewController
+@synthesize  customSliderDate, customSliderTime;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self.customSliderTime setType:sldTime];
-    [self.customSliderDate setType:sldDate];
-    [self.customSliderDate initValue];
-    [self.customSliderTime initValue];
-    [self.customSliderDate setDate:[NSDate date]];
-    [self.customSliderTime setDate:[NSDate date]];
+    [customSliderTime setType:sldTime];
+    [customSliderDate setType:sldDate];
+    [customSliderDate initValue];
+    [customSliderTime initValue];
+    [customSliderDate setDate:[NSDate date]];
+    [customSliderTime setDate:[NSDate date]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,8 +37,8 @@
     
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
-    NSDateComponents *dateComp = [gregorian components: (NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit) fromDate:[self.customSliderDate Date]];
-    NSDateComponents *timeComp = [gregorian components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:[self.customSliderTime Date]];
+    NSDateComponents *dateComp = [gregorian components: (NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit) fromDate:[customSliderDate Date]];
+    NSDateComponents *timeComp = [gregorian components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:[customSliderTime Date]];
 
     NSInteger min = [timeComp minute];
     NSInteger hour = [timeComp hour];
@@ -47,5 +48,10 @@
     
     [[[UIAlertView alloc] initWithTitle:@"Time" message:[NSString stringWithFormat:@"%02d/%02d/%04d %02d:%02d", day, month, year, hour, min] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     
+}
+
+- (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    [customSliderTime changeLocation:fromInterfaceOrientation];
+    [customSliderDate changeLocation:fromInterfaceOrientation];
 }
 @end

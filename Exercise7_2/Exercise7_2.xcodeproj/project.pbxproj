@@ -267,10 +267,14 @@
 		C73EF15A172A1790007B3CD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Thanh Ho Hai (PNYZ6Z8ML5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Thanh Ho Hai (PNYZ6Z8ML5)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Exercise7_2/Exercise7_2-Prefix.pch";
 				INFOPLIST_FILE = "Exercise7_2/Exercise7_2-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "83229C58-7767-4A93-A80E-EACB188F25E4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "83229C58-7767-4A93-A80E-EACB188F25E4";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

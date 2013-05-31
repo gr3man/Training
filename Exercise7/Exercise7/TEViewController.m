@@ -52,6 +52,7 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     if(coorX < self.sliderTime.frame.origin.x){
         coorX += self.labelTime.frame.size.width + 17;
     }
+
     coorTime.origin.x = coorX;
     [self.labelTime setFrame:coorTime];
     [self.labelTime setBackgroundColor:[UIColor clearColor]];
@@ -78,7 +79,7 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     self.labelDate = [[UILabel alloc] init];
     //[self.sliderDate setFrame:CGRectMake(100, 100, 100, 100)];
     CGRect coorDate = self.sliderDate.frame;
-    self.labelDate.text = [NSString stringWithFormat:@"%02d/%02d/%4d",day, month, year];
+    self.labelDate.text = [NSString stringWithFormat:@"%02d/%02d/%4d",day, month + 1, year];
     fontSize = self.labelDate.font.pointSize;
     coorDate.size.height = fontSize;
     coorDate.size.width = 88;
