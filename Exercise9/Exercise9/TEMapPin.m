@@ -14,4 +14,14 @@
 @synthesize subtitle;
 @synthesize coordinate;
 
+- (CLLocationCoordinate2D)coordinate
+{
+    return coordinate;
+}
+
+- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate {
+    
+    coordinate = newCoordinate;
+}
+
 @end
