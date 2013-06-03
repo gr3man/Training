@@ -24,6 +24,9 @@
     [customSliderDate initValue];
     [customSliderTime initValue];
     customSliderDate.ratioZoom = 10;
+    customSliderTime.ratioZoom = 40;
+    customSliderTime.iden = 1;
+    customSliderDate.iden = 2;
     [customSliderDate setDate:[NSDate date]];
     [customSliderTime setDate:[NSDate date]];
 }

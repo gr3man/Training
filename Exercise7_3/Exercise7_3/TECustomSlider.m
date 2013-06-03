@@ -12,7 +12,7 @@
 int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
 
 @implementation TECustomSlider
-@synthesize popupMenu, ratioZoom, miniSlider;
+@synthesize popupMenu, ratioZoom;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -66,7 +66,7 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
             break;
         case sldTime:
             [self setMinimumValue:0];
-            [self setMaximumValue:47];
+            [self setMaximumValue:1439];
         default:
             break;
     }
@@ -103,12 +103,12 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
         case sldDate:
             frameLabel.size.width = 88;
             frameLabel.origin.y -= 10;
-            coorX += self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 38)) - frameLabel.size.width + 4;
+            coorX += self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 38)) - frameLabel.size.width + 3;
             break;
         case sldTime:
             frameLabel.size.width = 45;
             frameLabel.origin.y -= 10;
-            coorX += self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 5)) - frameLabel.size.width + 5;
+            coorX += self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 155)) - frameLabel.size.width + 4;
         default:
             break;
     }
@@ -129,30 +129,47 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     popupMenu.backgroundColor = [UIColor clearColor];
     //customView.layer.borderColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), YourColorValues);
     popupMenu.layer.masksToBounds = YES;
+    popupMenu.currentValue = 0;
+    popupMenu.afterValue = 0;
+    [popupMenu setDelegate:self];
     
-    miniSlider = [[UISlider alloc] initWithFrame: CGRectMake(5, 4, self.frame.size.width, 23)];
-    miniSlider.minimumValue = 0;
-    miniSlider.maximumValue = lroundf(self.maximumValue / ratioZoom);
+    popupMenu.miniSlider.minimumValue = self.minimumValue;
+    popupMenu.miniSlider.maximumValue = self.maximumValue;
+    [popupMenu addSlider];
     //[popupMenu addSubview:miniSlider];
 }
 
 //Gọi ra popup khi click vào label
 - (void) showPopup
 {
-    //miniSlider.value = lroundf(miniSlider.maximumValue / 2);
-    
-    [self.superview addSubview:popupMenu];
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.4];
-    [popupMenu setAlpha:1.0];
-    [UIView commitAnimations];
-    [UIView setAnimationDuration:0.0];
+    if(popupMenu.invi){
+        popupMenu.invi = NO;
+        [self.superview addSubview:popupMenu];
+        [popupMenu resetValue];
+        
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.4];
+        [popupMenu setAlpha:1.0];
+        [UIView commitAnimations];
+        [UIView setAnimationDuration:0.0];
+    } else {
+        popupMenu.invi = YES;
+        [popupMenu removeFromSuperview];
+    }
+}
+
+- (void) miniSliderChange:(float)value
+{
+    popupMenu.currentValue = value;
+    self.value += (popupMenu.currentValue - popupMenu.afterValue) / ratioZoom;
+    [self valueChanged:self];
+    popupMenu.afterValue = value;
 }
 
 - (void) changeLocation : (UIInterfaceOrientation)orient{
     CGRect frameLabel = label.frame;
     float coorX = 0;
-    //Kiểm tra chiều màn hình để ddwatj lại vị trí cho label
+    //Kiểm tra chiều màn hình để đặt lại vị trí cho label
     if(UIInterfaceOrientationIsPortrait(orient)){
         if(type == sldTime){
             coorX = self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 3)) - frameLabel.size.width + 5;
@@ -162,7 +179,7 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     }
     else {
         if(type == sldTime){
-            coorX = self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 5)) - frameLabel.size.width + 5;
+            coorX = self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 155)) - frameLabel.size.width + 5;
         } else if(type == sldDate) {
             coorX = self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 38)) - frameLabel.size.width + 4;
         }
@@ -180,6 +197,7 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     [label setFrame:frameLabel];
 }
 
+//Sự kiện khi giá trị thay đổi
 - (IBAction) valueChanged:(UISlider *)sender{
     int progress = lroundf(sender.value);
     [self getDateFromInt:progress];
@@ -202,7 +220,7 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     else{
         switch (type) {
             case sldTime:
-                coorX += ((sender.value - previousValue) * (self.frame.size.width / (self.maximumValue - self.minimumValue + 5)));
+                coorX += ((sender.value - previousValue) * (self.frame.size.width / (self.maximumValue - self.minimumValue + 155)));
                 break;
             case sldDate:
                 coorX += ((sender.value - previousValue) * (self.frame.size.width / (self.maximumValue - self.minimumValue + 38)));
@@ -220,7 +238,7 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     previousValue = sender.value;
     [label setFrame:CGRectMake(coorX, label.frame.origin.y, label.frame.size.width, label.frame.size.height)];
     //Xóa popup đi
-    [popupMenu removeFromSuperview];
+    //[popupMenu removeFromSuperview];
 }
 
 - (NSString *)stringForLabel{
@@ -250,8 +268,8 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
             day = value;
             break;
         case sldTime:
-            hour = value/2;
-            min = (value%2) * 30;
+            hour = value/60;
+            min = value%60;
             break;
         default:
             break;
@@ -285,12 +303,12 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
             break;
             //Lấy giá trị giờ
         case sldTime:
-            if(min<15){
-                min = 0;
-            } else {
-                min = 30;
-            }
-            temp = hour * 2 + (min/30);
+//            if(min<15){
+//                min = 0;
+//            } else {
+//                min = 30;
+//            }
+            temp = hour * 60 + min;
             break;
         default:
             break;
@@ -298,6 +316,7 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     return temp;
 }
 
+//Lấy ngày tháng từ đối tượng NSDate
 -(void) getDateComponent:(NSDate *)dateValue{
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
@@ -310,6 +329,7 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     year = [timeComp year];
 }
 
+//Kiểm tra năm nhuận
 - (bool)isLeapYear{
     if((year%4 == 0 && year%100 != 0) || year%400 == 0){
         return YES;

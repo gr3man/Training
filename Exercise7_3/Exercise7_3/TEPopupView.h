@@ -8,7 +8,27 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PopupMenuDelegate <NSObject>
+
+- (void) miniSliderChange : (float) value;
+
+@end
+
 @interface TEPopupView : UIView
-@property (retain, nonatomic) UISlider *miniSlider;
+{
+    float currentValue;
+    float afterValue;
+    id<PopupMenuDelegate> delegate;
+    UISlider *miniSlider;
+    BOOL invi;
+}
+@property (assign) float currentValue;
+@property (assign) float afterValue;
+@property (assign) BOOL invi;
+@property (readwrite, nonatomic) UISlider *miniSlider;
+@property (retain) id<PopupMenuDelegate> delegate;
+- (IBAction)valueChanged:(UISlider *)sender;
+- (void) addSlider;
+- (void) resetValue;
 
 @end

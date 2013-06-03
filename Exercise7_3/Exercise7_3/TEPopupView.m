@@ -9,7 +9,7 @@
 #import "TEPopupView.h"
 
 @implementation TEPopupView
-@synthesize miniSlider;
+@synthesize miniSlider, delegate, currentValue, afterValue, invi;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -17,14 +17,28 @@
     if (self) {
         // Initialization code
         miniSlider = [[UISlider alloc] initWithFrame: CGRectMake(5, 4, self.frame.size.width - 10, 23)];
-        [self addSubview:miniSlider];
+        [miniSlider addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
     }
+    invi = YES;
     return self;
 }
 
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void) addSlider
 {
-    NSLog(@"adf");
+    miniSlider.value = miniSlider.maximumValue/2;
+    [self addSubview:miniSlider];
+}
+
+- (void) resetValue
+{
+    miniSlider.value = miniSlider.maximumValue/2;
+    currentValue = miniSlider.value;
+    afterValue = miniSlider.value;
+}
+
+- (IBAction)valueChanged:(UISlider *)sender
+{
+    [delegate miniSliderChange:sender.value];
 }
 
 /*

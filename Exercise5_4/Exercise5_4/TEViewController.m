@@ -137,7 +137,6 @@ static NSString *TableViewCellIdentifier = @"Cells";
         
         if(indexPath.section == 1){
             cell.detailTextLabel.text = [timeFormat stringFromDate:[NSDate date]];
-        } else if (indexPath.section == 0){
             cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@",data.month[0][0],data.dayOfMonth[0]];
         }
         

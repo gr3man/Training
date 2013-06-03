@@ -14,7 +14,7 @@ typedef enum {
     sldTime
 } TypeSlider;
 
-@interface TECustomSlider : UISlider
+@interface TECustomSlider : UISlider <PopupMenuDelegate>
 
 {
     TypeSlider type;
@@ -28,6 +28,7 @@ typedef enum {
     NSInteger year;
     float previousValue;
     CGRect popupFrame;
+    int iden;
 }
 
 //- (id)initWithSlider:(UISlider *) newSlider;
@@ -36,7 +37,7 @@ typedef enum {
 
 @property (assign, nonatomic) NSInteger ratioZoom;
 @property (retain, nonatomic) TEPopupView *popupMenu;
-@property (retain, nonatomic) UISlider *miniSlider;
+@property (assign, nonatomic) int iden;
 
 - (void)setType : (TypeSlider)newType;
 - (TypeSlider) Type;
