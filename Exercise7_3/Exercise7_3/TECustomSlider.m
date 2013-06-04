@@ -142,18 +142,54 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
 //Gọi ra popup khi click vào label
 - (void) showPopup
 {
-    if(popupMenu.invi){
-        popupMenu.invi = NO;
-        [self.superview addSubview:popupMenu];
-        [popupMenu resetValue];
-        
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:0.4];
-        [popupMenu setAlpha:1.0];
-        [UIView commitAnimations];
-        [UIView setAnimationDuration:0.0];
-    } else {
-        popupMenu.invi = YES;
+    UIView *superView = self.superview;
+    for (UIView* subView in superView.subviews)
+    {
+        [subView setUserInteractionEnabled:NO];
+    }
+    [popupMenu setUserInteractionEnabled:YES];
+    //[self setUserInteractionEnabled:YES];
+    
+    [self.superview addSubview:popupMenu];
+    [popupMenu resetValue];
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.4];
+    [popupMenu setAlpha:1.0];
+    [UIView commitAnimations];
+    [UIView setAnimationDuration:0.0];
+    
+//    if(popupMenu.invi){
+//        
+//        UIView *superView = self.superview;
+//        for (UIView* subView in superView.subviews)
+//        {
+//            [subView setUserInteractionEnabled:NO];
+//        }
+//        [popupMenu setUserInteractionEnabled:YES];
+//        [self setUserInteractionEnabled:YES];
+//
+//        popupMenu.invi = NO;
+//        [self.superview addSubview:popupMenu];
+//        [popupMenu resetValue];
+//        
+//        [UIView beginAnimations:nil context:NULL];
+//        [UIView setAnimationDuration:0.4];
+//        [popupMenu setAlpha:1.0];
+//        [UIView commitAnimations];
+//        [UIView setAnimationDuration:0.0];
+//    } else {
+//        popupMenu.invi = YES;
+//        [popupMenu removeFromSuperview];
+//    }
+}
+
+- (void) hidePopup
+{
+    UIView *superView = self.superview;
+    for (UIView* subView in superView.subviews)
+    {
+        [subView setUserInteractionEnabled:YES];
         [popupMenu removeFromSuperview];
     }
 }
@@ -303,11 +339,6 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
             break;
             //Lấy giá trị giờ
         case sldTime:
-//            if(min<15){
-//                min = 0;
-//            } else {
-//                min = 30;
-//            }
             temp = hour * 60 + min;
             break;
         default:

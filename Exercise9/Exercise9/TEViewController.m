@@ -8,6 +8,7 @@
 
 #import "TEViewController.h"
 #import "TEMapPin.h"
+#import "TECustomAnnotationView.h"
 
 @interface TEViewController ()
 
@@ -52,15 +53,16 @@ CLLocationCoordinate2D annotaitonCoords[2];
     annotaitonCoords[0].longitude = 105.743011;
     start = [[TEMapPin alloc] init];
     start.coordinate =annotaitonCoords[0];
+    start.lcav = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_you.png"]];
     start.title = @"Start Point";
-    start.subtitle = @"This is where we started!";
+    //start.subtitle = @"This is where we started!";
     
     annotaitonCoords[1].latitude = 21.005140;
     annotaitonCoords[1].longitude = 105.943011;
     end = [[TEMapPin alloc] init];
     end.coordinate =annotaitonCoords[1];
-    end.title = @"End Point";
-    end.subtitle = @"This is where we finished!";
+    //end.title = @"End Point";
+    //end.subtitle = @"This is where we finished!";
     
     [mapv addAnnotation:start];
     [mapv addAnnotation:end];
@@ -94,12 +96,12 @@ CLLocationCoordinate2D annotaitonCoords[2];
 
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
     static NSString *reuseId = @"pin";
-    MKPinAnnotationView *pav = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:reuseId];
+    TECustomAnnotationView *pav = (TECustomAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:reuseId];
     if (pav == nil)
     {
-        pav = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseId];
+        pav = [[TECustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseId];
         pav.draggable = YES;
-        pav.canShowCallout = YES;
+        //pav.canShowCallout = YES;
     }
     else
     {
@@ -142,4 +144,9 @@ CLLocationCoordinate2D annotaitonCoords[2];
     MKCoordinateRegion hanoi = MKCoordinateRegionMakeWithDistance(mapv.region.center, zoomBar.value * 10000, zoomBar.value * 10000);
     [mapv setRegion:hanoi];
 }
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+}
+
 @end

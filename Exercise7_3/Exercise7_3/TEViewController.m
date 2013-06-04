@@ -25,8 +25,6 @@
     [customSliderTime initValue];
     customSliderDate.ratioZoom = 10;
     customSliderTime.ratioZoom = 40;
-    customSliderTime.iden = 1;
-    customSliderDate.iden = 2;
     [customSliderDate setDate:[NSDate date]];
     [customSliderTime setDate:[NSDate date]];
 }
@@ -51,12 +49,17 @@
     NSInteger year = [dateComp year];
     
     [[[UIAlertView alloc] initWithTitle:@"Time" message:[NSString stringWithFormat:@"%02d/%02d/%04d %02d:%02d", day, month, year, hour, min] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-    
 }
 
 - (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
     [customSliderTime changeLocation:fromInterfaceOrientation];
     [customSliderDate changeLocation:fromInterfaceOrientation];
+}
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [customSliderDate hidePopup];
+    [customSliderTime hidePopup];
 }
 
 @end

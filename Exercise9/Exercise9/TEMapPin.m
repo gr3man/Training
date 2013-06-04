@@ -10,9 +10,7 @@
 
 @implementation TEMapPin
 
-@synthesize title;
-@synthesize subtitle;
-@synthesize coordinate;
+@synthesize coordinate,lcav, title, subtitle;
 
 - (CLLocationCoordinate2D)coordinate
 {

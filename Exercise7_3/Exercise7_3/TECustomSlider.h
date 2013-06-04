@@ -28,7 +28,6 @@ typedef enum {
     NSInteger year;
     float previousValue;
     CGRect popupFrame;
-    int iden;
 }
 
 //- (id)initWithSlider:(UISlider *) newSlider;
@@ -37,7 +36,6 @@ typedef enum {
 
 @property (assign, nonatomic) NSInteger ratioZoom;
 @property (retain, nonatomic) TEPopupView *popupMenu;
-@property (assign, nonatomic) int iden;
 
 - (void)setType : (TypeSlider)newType;
 - (TypeSlider) Type;
@@ -53,6 +51,7 @@ typedef enum {
 - (IBAction)valueChanged:(UISlider *)sender;
 - (void) changeLocation:(UIInterfaceOrientation)orient;
 - (void) showPopup;
+- (void) hidePopup;
 
 
 @end

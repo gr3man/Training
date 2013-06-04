@@ -19,6 +19,10 @@
 		C7078AE7174CB60900DEC740 /* TEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7078AE6174CB60900DEC740 /* TEViewController.m */; };
 		C7078AEA174CB60900DEC740 /* TEViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7078AE8174CB60900DEC740 /* TEViewController.xib */; };
 		C7078AF1174CB63C00DEC740 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7078AF0174CB63C00DEC740 /* MapKit.framework */; };
+		C7A3664C175D933E00869C82 /* icon_you.png in Resources */ = {isa = PBXBuildFile; fileRef = C7A3664B175D933E00869C82 /* icon_you.png */; };
+		C7A3664F175D9DCB00869C82 /* TECustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A3664E175D9DCB00869C82 /* TECustomAnnotationView.m */; };
+		C7A36651175D9DDA00869C82 /* CameraFloating@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7A36650175D9DDA00869C82 /* CameraFloating@2x.png */; };
+		C7A36653175D9FF600869C82 /* icon_you@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7A36652175D9FF600869C82 /* icon_you@2x.png */; };
 		C7D353041757C1C100C86F34 /* TEMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D353031757C1C100C86F34 /* TEMapPin.m */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +44,11 @@
 		C7078AE6174CB60900DEC740 /* TEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TEViewController.m; sourceTree = "<group>"; };
 		C7078AE9174CB60900DEC740 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TEViewController.xib; sourceTree = "<group>"; };
 		C7078AF0174CB63C00DEC740 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C7A3664B175D933E00869C82 /* icon_you.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_you.png; sourceTree = "<group>"; };
+		C7A3664D175D9DCB00869C82 /* TECustomAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TECustomAnnotationView.h; sourceTree = "<group>"; };
+		C7A3664E175D9DCB00869C82 /* TECustomAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TECustomAnnotationView.m; sourceTree = "<group>"; };
+		C7A36650175D9DDA00869C82 /* CameraFloating@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CameraFloating@2x.png"; sourceTree = "<group>"; };
+		C7A36652175D9FF600869C82 /* icon_you@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_you@2x.png"; sourceTree = "<group>"; };
 		C7D353021757C1C100C86F34 /* TEMapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMapPin.h; sourceTree = "<group>"; };
 		C7D353031757C1C100C86F34 /* TEMapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMapPin.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +107,8 @@
 				C7078AD4174CB60900DEC740 /* Supporting Files */,
 				C7D353021757C1C100C86F34 /* TEMapPin.h */,
 				C7D353031757C1C100C86F34 /* TEMapPin.m */,
+				C7A3664D175D9DCB00869C82 /* TECustomAnnotationView.h */,
+				C7A3664E175D9DCB00869C82 /* TECustomAnnotationView.m */,
 			);
 			path = Exercise9;
 			sourceTree = "<group>";
@@ -105,6 +116,9 @@
 		C7078AD4174CB60900DEC740 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C7A36650175D9DDA00869C82 /* CameraFloating@2x.png */,
+				C7A36652175D9FF600869C82 /* icon_you@2x.png */,
+				C7A3664B175D933E00869C82 /* icon_you.png */,
 				C7078AD5174CB60900DEC740 /* Exercise9-Info.plist */,
 				C7078AD6174CB60900DEC740 /* InfoPlist.strings */,
 				C7078AD9174CB60900DEC740 /* main.m */,
@@ -173,6 +187,9 @@
 				C7078AE2174CB60900DEC740 /* Default@2x.png in Resources */,
 				C7078AE4174CB60900DEC740 /* Default-568h@2x.png in Resources */,
 				C7078AEA174CB60900DEC740 /* TEViewController.xib in Resources */,
+				C7A3664C175D933E00869C82 /* icon_you.png in Resources */,
+				C7A36651175D9DDA00869C82 /* CameraFloating@2x.png in Resources */,
+				C7A36653175D9FF600869C82 /* icon_you@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +204,7 @@
 				C7078ADE174CB60900DEC740 /* TEAppDelegate.m in Sources */,
 				C7078AE7174CB60900DEC740 /* TEViewController.m in Sources */,
 				C7D353041757C1C100C86F34 /* TEMapPin.m in Sources */,
+				C7A3664F175D9DCB00869C82 /* TECustomAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
