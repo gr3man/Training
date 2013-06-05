@@ -19,6 +19,7 @@ typedef enum {
 {
     TypeSlider type;
     UILabel *label;
+    UIButton *button;
     NSDate *date;
     NSInteger min;
     NSInteger hour;
@@ -36,6 +37,7 @@ typedef enum {
 
 @property (assign, nonatomic) NSInteger ratioZoom;
 @property (retain, nonatomic) TEPopupView *popupMenu;
+@property (retain, nonatomic) UIButton *button;
 
 - (void)setType : (TypeSlider)newType;
 - (TypeSlider) Type;
@@ -47,7 +49,7 @@ typedef enum {
 - (void)getDateFromInt : (int) value;
 - (void)getDateComponent : (NSDate *)dateValue;
 - (bool)isLeapYear;
-- (NSString *) stringForLabel;
+- (NSString *) textForButton;
 - (IBAction)valueChanged:(UISlider *)sender;
 - (void) changeLocation:(UIInterfaceOrientation)orient;
 - (void) showPopup;

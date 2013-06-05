@@ -12,7 +12,7 @@
 int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
 
 @implementation TECustomSlider
-@synthesize popupMenu, ratioZoom;
+@synthesize popupMenu, ratioZoom, button;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -78,51 +78,60 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
 }
 
 - (void) initUIlable{
+    UIFont *defaultFont = [UIFont fontWithName:@"Helvetica" size:17];
     float coorX = self.frame.origin.x;
-    label = [[UILabel alloc] init];
-    CGRect frameLabel;
-    label.text = [self stringForLabel];
-    [label setBackgroundColor:[UIColor clearColor]];
+    button = [[UIButton alloc] init];
+    //label = [[UILabel alloc] init];
+    CGRect frameButton;
+    //label.text = [self stringForLabel];
+    [button setTitle:[self textForButton] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    button.titleLabel.text = [self textForButton];
+    //[label setBackgroundColor:[UIColor clearColor]];
     //Vẽ khung
-    label.layer.borderColor = [UIColor blackColor].CGColor;
+    //label.layer.borderColor = [UIColor blackColor].CGColor;
+    button.layer.borderColor = [UIColor blackColor].CGColor;
+    button.layer.borderWidth = 1;
+    button.titleLabel.font = defaultFont;
     
     //Đặt frame cho popup
     popupFrame = CGRectMake(self.frame.origin.x, self.frame.origin.y - 30, self.frame.size.width, 30);
     
-    label.layer.borderWidth = 1;
+    //label.layer.borderWidth = 1;
     //Cho phép label có thể click
-    UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showPopup)];
+    //UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showPopup)];
     // if labelView is not set userInteractionEnabled, you must do so
-    [label setUserInteractionEnabled:YES];
-    [label addGestureRecognizer:gesture];
+    //[label setUserInteractionEnabled:YES];
+    //[label addGestureRecognizer:gesture];
+    [button addTarget:self action:@selector(showPopup) forControlEvents:UIControlEventAllTouchEvents];
     
-    CGFloat fontSize = label.font.pointSize;
-    frameLabel.size.height = fontSize;
+    CGFloat fontSize = button.titleLabel.font.pointSize;
+    frameButton.size.height = fontSize;
     //Tính toán kích thước, vị trí label
     switch (type) {
         case sldDate:
-            frameLabel.size.width = 88;
-            frameLabel.origin.y -= 10;
-            coorX += self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 38)) - frameLabel.size.width + 3;
+            frameButton.size.width = 88;
+            frameButton.origin.y -= 10;
+            coorX += self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 38)) - frameButton.size.width + 3;
             break;
         case sldTime:
-            frameLabel.size.width = 45;
-            frameLabel.origin.y -= 10;
-            coorX += self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 155)) - frameLabel.size.width + 4;
+            frameButton.size.width = 45;
+            frameButton.origin.y -= 10;
+            coorX += self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 155)) - frameButton.size.width + 4;
         default:
             break;
     }
     //Kiểm tra nếu label bị quá slider thì đặt lại label
     if(coorX < self.frame.origin.x){
-        coorX += frameLabel.size.width + 17;
+        coorX += frameButton.size.width + 17;
     }
-    frameLabel.origin.x = coorX;
-    frameLabel.origin.y = self.frame.origin.y - 12;
-    [label setFrame:frameLabel];
-    [self.superview addSubview:label];
+    frameButton.origin.x = coorX;
+    frameButton.origin.y = self.frame.origin.y - 12;
+    [button setFrame:frameButton];
+    [self.superview addSubview:button];
 
     //Khởi tạo popup menu
-    popupMenu = [[TEPopupView alloc] initWithFrame:CGRectMake(self.frame.origin.x - 5, self.frame.origin.y -26 - label.frame.size.height, self.frame.size.width + 10, 30)];
+    popupMenu = [[TEPopupView alloc] initWithFrame:CGRectMake(self.frame.origin.x - 5, self.frame.origin.y -26 - button.frame.size.height, self.frame.size.width + 10, 30)];
     //popupMenu.alpha = 0.5;
     popupMenu.layer.cornerRadius = 5;
     popupMenu.layer.borderWidth = 1.5f;
@@ -143,6 +152,7 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
 - (void) showPopup
 {
     UIView *superView = self.superview;
+    //Disable tất cả các view trừ popup
     for (UIView* subView in superView.subviews)
     {
         [subView setUserInteractionEnabled:NO];
@@ -189,60 +199,72 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     UIView *superView = self.superview;
     for (UIView* subView in superView.subviews)
     {
+        //Kích hoạt tất cả các subView của view chính
         [subView setUserInteractionEnabled:YES];
         [popupMenu removeFromSuperview];
     }
 }
 
+//Slider ở popup thay đổi giá trị
 - (void) miniSliderChange:(float)value
 {
     popupMenu.currentValue = value;
-    self.value += (popupMenu.currentValue - popupMenu.afterValue) / ratioZoom;
-    [self valueChanged:self];
-    popupMenu.afterValue = value;
+    //Nếu giá trị thêm vào quá giới hạn slider thì không thay đổi
+    if(self.value + (popupMenu.currentValue - popupMenu.afterValue) / ratioZoom > self.maximumValue || self.value + (popupMenu.currentValue - popupMenu.afterValue) / ratioZoom < self.minimumValue){
+        //Đặt lại giá trị hiện tại nhằm không thay đổi.
+        popupMenu.currentValue = popupMenu.afterValue;
+    }
+    else{
+        self.value += (popupMenu.currentValue - popupMenu.afterValue) / ratioZoom;
+        [self valueChanged:self];
+        popupMenu.afterValue  = value;
+    }
 }
 
 - (void) changeLocation : (UIInterfaceOrientation)orient{
-    CGRect frameLabel = label.frame;
+    CGRect frameButton = button.frame;
     float coorX = 0;
     //Kiểm tra chiều màn hình để đặt lại vị trí cho label
     if(UIInterfaceOrientationIsPortrait(orient)){
         if(type == sldTime){
-            coorX = self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 3)) - frameLabel.size.width + 5;
+            //Tính toán thay đổi trục X của button
+            coorX = self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 3)) - frameButton.size.width + 5;
         } else if(type == sldDate) {
-            coorX = self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 20)) - frameLabel.size.width + 4;
+            coorX = self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 20)) - frameButton.size.width + 4;
         }
     }
     else {
         if(type == sldTime){
-            coorX = self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 155)) - frameLabel.size.width + 5;
+            coorX = self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 155)) - frameButton.size.width + 5;
         } else if(type == sldDate) {
-            coorX = self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 38)) - frameLabel.size.width + 4;
+            coorX = self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 38)) - frameButton.size.width + 4;
         }
     }
     //Kiểm tra label có ra ngoài slider không
     if(coorX < self.frame.origin.x){
-        coorX += frameLabel.size.width + 17;
+        coorX += frameButton.size.width + 17;
     }
     
-    if(coorX + label.frame.size.width > self.frame.size.width){
-        coorX -= label.frame.size.width + 17;
+    if(coorX + button.frame.size.width > self.frame.size.width){
+        coorX -= button.frame.size.width + 17;
     }
     
-    frameLabel.origin.x = coorX;
-    [label setFrame:frameLabel];
+    frameButton.origin.x = coorX;
+    [button setFrame:frameButton];
 }
 
 //Sự kiện khi giá trị thay đổi
 - (IBAction) valueChanged:(UISlider *)sender{
     int progress = lroundf(sender.value);
     [self getDateFromInt:progress];
-    label.text = [self stringForLabel];
-    CGFloat coorX = label.frame.origin.x;
+    [button setTitle:[self textForButton] forState:UIControlStateNormal];
+    CGFloat coorX = button.frame.origin.x;
     
+    //Kiểm tra chiều màn hình
     UIInterfaceOrientation interfaceOrientation = [UIApplication sharedApplication].statusBarOrientation;
     if(UIInterfaceOrientationIsLandscape(interfaceOrientation)){
         switch (type) {
+                //Tính toán thay đổi giá trị trục X của button
             case sldTime:
                 coorX += ((sender.value - previousValue) * (self.frame.size.width / (self.maximumValue - self.minimumValue + 3)));
                 break;
@@ -266,20 +288,21 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
         }
     }
     if(coorX < self.frame.origin.x){
-        coorX += label.frame.size.width + 17;
+        coorX += button.frame.size.width + 17;
     }
-    if(coorX + label.frame.size.width > self.frame.size.width + self.frame.origin.x){
-        coorX -= label.frame.size.width + 17;
+    if(coorX + button.frame.size.width > self.frame.size.width + self.frame.origin.x){
+        coorX -= button.frame.size.width + 17;
     }
     previousValue = sender.value;
-    [label setFrame:CGRectMake(coorX, label.frame.origin.y, label.frame.size.width, label.frame.size.height)];
+    [button setFrame:CGRectMake(coorX, button.frame.origin.y, button.frame.size.width, button.frame.size.height)];
     //Xóa popup đi
     //[popupMenu removeFromSuperview];
 }
 
-- (NSString *)stringForLabel{
-    //Text cho label
+- (NSString *)textForButton{
+    //Text cho button
     switch (type) {
+            //Kiểm tra kiểu slider để trả về text phù hợp
         case sldDate:
             return [NSString stringWithFormat:@"%02d/%02d/%04d",day, month, year];
             break;
