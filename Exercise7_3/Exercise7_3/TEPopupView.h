@@ -21,6 +21,7 @@
     id<PopupMenuDelegate> delegate;
     UISlider *miniSlider;
     BOOL invi;
+    UIImageView *triangular;
 }
 @property (assign) float currentValue;
 @property (assign) float afterValue;
@@ -30,5 +31,6 @@
 - (IBAction)valueChanged:(UISlider *)sender;
 - (void) addSlider;
 - (void) resetValue;
+- (void) setFrameforTriangular : (float) coorX;
 
 @end

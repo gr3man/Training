@@ -37,14 +37,6 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     type = newType;
 }
 
-- (TypeSlider) Type{
-    return type;
-}
-
-- (NSDate *) Date{
-    return date;
-}
-
 - (void) setDate:(NSDate *)newDate{
     date = newDate;
 }
@@ -80,32 +72,26 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
 - (void) initUIlable{
     UIFont *defaultFont = [UIFont fontWithName:@"Helvetica" size:17];
     float coorX = self.frame.origin.x;
+    float a, b, c, d;
     button = [[UIButton alloc] init];
-    //label = [[UILabel alloc] init];
     CGRect frameButton;
-    //label.text = [self stringForLabel];
     [button setTitle:[self textForButton] forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     button.titleLabel.text = [self textForButton];
-    //[label setBackgroundColor:[UIColor clearColor]];
     //Vẽ khung
-    //label.layer.borderColor = [UIColor blackColor].CGColor;
-    button.layer.borderColor = [UIColor blackColor].CGColor;
-    button.layer.borderWidth = 1;
+    button.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    [[UIColor whiteColor] getHue:&a saturation:&b brightness:&c alpha:&d];
+    button.layer.borderColor = [UIColor colorWithHue:a saturation:b brightness:c/2 alpha:d].CGColor;
+    button.layer.borderWidth = 0.5;
+    button.layer.cornerRadius = 9;
     button.titleLabel.font = defaultFont;
     
     //Đặt frame cho popup
     popupFrame = CGRectMake(self.frame.origin.x, self.frame.origin.y - 30, self.frame.size.width, 30);
     
-    //label.layer.borderWidth = 1;
-    //Cho phép label có thể click
-    //UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showPopup)];
-    // if labelView is not set userInteractionEnabled, you must do so
-    //[label setUserInteractionEnabled:YES];
-    //[label addGestureRecognizer:gesture];
     [button addTarget:self action:@selector(showPopup) forControlEvents:UIControlEventAllTouchEvents];
     
-    CGFloat fontSize = button.titleLabel.font.pointSize;
+    CGFloat fontSize = button.titleLabel.font.pointSize + 5;
     frameButton.size.height = fontSize;
     //Tính toán kích thước, vị trí label
     switch (type) {
@@ -126,21 +112,22 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
         coorX += frameButton.size.width + 17;
     }
     frameButton.origin.x = coorX;
-    frameButton.origin.y = self.frame.origin.y - 12;
+    frameButton.origin.y = self.frame.origin.y - 19;
     [button setFrame:frameButton];
     [self.superview addSubview:button];
+    //CGRect k = self.superview.frame;
 
     //Khởi tạo popup menu
-    popupMenu = [[TEPopupView alloc] initWithFrame:CGRectMake(self.frame.origin.x - 5, self.frame.origin.y -26 - button.frame.size.height, self.frame.size.width + 10, 30)];
+    popupMenu = [[TEPopupView alloc] initWithFrame:CGRectMake(self.frame.origin.x - 5, self.frame.origin.y -32 - button.frame.size.height, self.frame.size.width + 10, 30)];
     //popupMenu.alpha = 0.5;
     popupMenu.layer.cornerRadius = 5;
-    popupMenu.layer.borderWidth = 1.5f;
-    popupMenu.backgroundColor = [UIColor clearColor];
-    //customView.layer.borderColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), YourColorValues);
-    popupMenu.layer.masksToBounds = YES;
+    popupMenu.layer.borderWidth = 0;
+    //popupMenu.layer.masksToBounds = YES;
     popupMenu.currentValue = 0;
     popupMenu.afterValue = 0;
     [popupMenu setDelegate:self];
+    
+    [popupMenu setFrameforTriangular:(button.frame.origin.x + button.frame.size.width/2 - popupMenu.frame.origin.x - 5)];
     
     popupMenu.miniSlider.minimumValue = self.minimumValue;
     popupMenu.miniSlider.maximumValue = self.maximumValue;
@@ -168,30 +155,6 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     [popupMenu setAlpha:1.0];
     [UIView commitAnimations];
     [UIView setAnimationDuration:0.0];
-    
-//    if(popupMenu.invi){
-//        
-//        UIView *superView = self.superview;
-//        for (UIView* subView in superView.subviews)
-//        {
-//            [subView setUserInteractionEnabled:NO];
-//        }
-//        [popupMenu setUserInteractionEnabled:YES];
-//        [self setUserInteractionEnabled:YES];
-//
-//        popupMenu.invi = NO;
-//        [self.superview addSubview:popupMenu];
-//        [popupMenu resetValue];
-//        
-//        [UIView beginAnimations:nil context:NULL];
-//        [UIView setAnimationDuration:0.4];
-//        [popupMenu setAlpha:1.0];
-//        [UIView commitAnimations];
-//        [UIView setAnimationDuration:0.0];
-//    } else {
-//        popupMenu.invi = YES;
-//        [popupMenu removeFromSuperview];
-//    }
 }
 
 - (void) hidePopup
@@ -221,37 +184,6 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     }
 }
 
-- (void) changeLocation : (UIInterfaceOrientation)orient{
-    CGRect frameButton = button.frame;
-    float coorX = 0;
-    //Kiểm tra chiều màn hình để đặt lại vị trí cho label
-    if(UIInterfaceOrientationIsPortrait(orient)){
-        if(type == sldTime){
-            //Tính toán thay đổi trục X của button
-            coorX = self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 3)) - frameButton.size.width + 5;
-        } else if(type == sldDate) {
-            coorX = self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 20)) - frameButton.size.width + 4;
-        }
-    }
-    else {
-        if(type == sldTime){
-            coorX = self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 155)) - frameButton.size.width + 5;
-        } else if(type == sldDate) {
-            coorX = self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 38)) - frameButton.size.width + 4;
-        }
-    }
-    //Kiểm tra label có ra ngoài slider không
-    if(coorX < self.frame.origin.x){
-        coorX += frameButton.size.width + 17;
-    }
-    
-    if(coorX + button.frame.size.width > self.frame.size.width){
-        coorX -= button.frame.size.width + 17;
-    }
-    
-    frameButton.origin.x = coorX;
-    [button setFrame:frameButton];
-}
 
 //Sự kiện khi giá trị thay đổi
 - (IBAction) valueChanged:(UISlider *)sender{
@@ -260,33 +192,17 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     [button setTitle:[self textForButton] forState:UIControlStateNormal];
     CGFloat coorX = button.frame.origin.x;
     
-    //Kiểm tra chiều màn hình
-    UIInterfaceOrientation interfaceOrientation = [UIApplication sharedApplication].statusBarOrientation;
-    if(UIInterfaceOrientationIsLandscape(interfaceOrientation)){
-        switch (type) {
-                //Tính toán thay đổi giá trị trục X của button
-            case sldTime:
-                coorX += ((sender.value - previousValue) * (self.frame.size.width / (self.maximumValue - self.minimumValue + 3)));
-                break;
-            case sldDate:
-                coorX += ((sender.value - previousValue) * (self.frame.size.width / (self.maximumValue - self.minimumValue + 20)));
-                break;
-            default:
-                break;
-        }
+    switch (type) {
+        case sldTime:
+            coorX += ((sender.value - previousValue) * (self.frame.size.width / (self.maximumValue - self.minimumValue + 155)));
+            break;
+        case sldDate:
+            coorX += ((sender.value - previousValue) * (self.frame.size.width / (self.maximumValue - self.minimumValue + 38)));
+            break;
+        default:
+            break;
     }
-    else{
-        switch (type) {
-            case sldTime:
-                coorX += ((sender.value - previousValue) * (self.frame.size.width / (self.maximumValue - self.minimumValue + 155)));
-                break;
-            case sldDate:
-                coorX += ((sender.value - previousValue) * (self.frame.size.width / (self.maximumValue - self.minimumValue + 38)));
-                break;
-            default:
-                break;
-        }
-    }
+    
     if(coorX < self.frame.origin.x){
         coorX += button.frame.size.width + 17;
     }
@@ -295,8 +211,7 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     }
     previousValue = sender.value;
     [button setFrame:CGRectMake(coorX, button.frame.origin.y, button.frame.size.width, button.frame.size.height)];
-    //Xóa popup đi
-    //[popupMenu removeFromSuperview];
+    [popupMenu setFrameforTriangular:(button.frame.origin.x + button.frame.size.width/2 - popupMenu.frame.origin.x - 5)];
 }
 
 - (NSString *)textForButton{
@@ -390,20 +305,5 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     }
     return NO;
 }
-
-//- (BOOL) beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event{
-//    NSLog(@"inside");
-//    return [super beginTrackingWithTouch:touch withEvent:event];
-//}
-//
-//- (BOOL) continueTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event{
-//    NSLog(@"inmo");
-//    return [super continueTrackingWithTouch:touch withEvent:event];
-//}
-
-//- (CGRect)trackRectForBounds:(CGRect)bounds
-//{
-//    return bounds;
-//}
 
 @end

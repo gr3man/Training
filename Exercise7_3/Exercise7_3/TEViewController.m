@@ -13,12 +13,30 @@
 @end
 
 @implementation TEViewController
-@synthesize customSliderTime, customSliderDate;
+@synthesize customSliderTime, customSliderDate, layoutView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 60, 42, 21)];
+    UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 150, 42, 21)];
+    [timeLabel setBackgroundColor:[UIColor clearColor]];
+    [dateLabel setBackgroundColor:[UIColor clearColor]];
+    [timeLabel setText:@"Time"];
+    [dateLabel setText:@"Date"];
+    
+    customSliderTime = [[TECustomSlider alloc] initWithFrame:CGRectMake(68, 60, 234, 23)];
+    customSliderDate = [[TECustomSlider alloc] initWithFrame:CGRectMake(68, 150, 234, 23)];
+    
+    layoutView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+    [layoutView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background_maptools_view.png"]]];
+    
+    [layoutView addSubview:timeLabel];
+    [layoutView addSubview:dateLabel];
+    [layoutView addSubview:customSliderDate];
+    [layoutView addSubview:customSliderTime];
+    
     [customSliderTime setType:sldTime];
     [customSliderDate setType:sldDate];
     [customSliderDate initValue];
@@ -27,6 +45,11 @@
     customSliderTime.ratioZoom = 40;
     [customSliderDate setDate:[NSDate date]];
     [customSliderTime setDate:[NSDate date]];
+
+    [self.asf setType:sldDate];
+    [self.asf initValue];
+    [self.asf setDate:[NSDate date]];
+    [self.view addSubview:layoutView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,11 +73,11 @@
     
     [[[UIAlertView alloc] initWithTitle:@"Time" message:[NSString stringWithFormat:@"%02d/%02d/%04d %02d:%02d", day, month, year, hour, min] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 }
-
-- (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
-    [customSliderTime changeLocation:fromInterfaceOrientation];
-    [customSliderDate changeLocation:fromInterfaceOrientation];
-}
+//
+//- (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+//    [customSliderTime changeLocation:fromInterfaceOrientation];
+//    [customSliderDate changeLocation:fromInterfaceOrientation];
+//}
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {

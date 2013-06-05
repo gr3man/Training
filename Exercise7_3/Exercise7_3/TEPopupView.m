@@ -17,7 +17,10 @@
     if (self) {
         // Initialization code
         miniSlider = [[UISlider alloc] initWithFrame: CGRectMake(5, 4, self.frame.size.width - 10, 23)];
+        [self setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background_maptools_view.png"]]];
         [miniSlider addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
+        triangular = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"btn-arrow-down.png"]];
+        [self addSubview:triangular];
     }
     invi = YES;
     return self;
@@ -39,6 +42,11 @@
 - (IBAction)valueChanged:(UISlider *)sender
 {
     [delegate miniSliderChange:sender.value];
+}
+
+- (void) setFrameforTriangular:(float)coorX
+{
+    [triangular setFrame:CGRectMake(coorX, self.frame.size.height, triangular.frame.size.width, triangular.frame.size.height)];
 }
 
 /*

@@ -11,8 +11,10 @@
 
 
 @interface TEViewController : UIViewController
-@property (strong, nonatomic) IBOutlet TECustomSlider *customSliderDate;
-@property (strong, nonatomic) IBOutlet TECustomSlider *customSliderTime;
+@property (strong, nonatomic) IBOutlet TECustomSlider *asf;
+@property (strong, nonatomic) TECustomSlider *customSliderDate;
+@property (strong, nonatomic) TECustomSlider *customSliderTime;
+@property (strong, nonatomic) UIView *layoutView;
 - (IBAction)btnClicked:(UIButton *)sender;
 
 @end
