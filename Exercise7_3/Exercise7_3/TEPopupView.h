@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @protocol PopupMenuDelegate <NSObject>
 
@@ -32,5 +33,6 @@
 - (void) addSlider;
 - (void) resetValue;
 - (void) setFrameforTriangular : (float) coorX;
+- (void) showPopup : (UIView *) view;
 
 @end

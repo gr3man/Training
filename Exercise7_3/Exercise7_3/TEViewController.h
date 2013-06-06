@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "TECustomSlider.h"
+#import "TECustomRoundRectButton.h"
 
 
 @interface TEViewController : UIViewController
-@property (strong, nonatomic) IBOutlet TECustomSlider *asf;
 @property (strong, nonatomic) TECustomSlider *customSliderDate;
 @property (strong, nonatomic) TECustomSlider *customSliderTime;
 @property (strong, nonatomic) UIView *layoutView;

@@ -12,7 +12,7 @@
 int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
 
 @implementation TECustomSlider
-@synthesize popupMenu, ratioZoom, button;
+@synthesize popupMenu, ratioZoom, button, delegate;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -41,6 +41,11 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     date = newDate;
 }
 
+- (NSDate *) date
+{
+    return date;
+}
+
 
 //Khởi tạo Slider
 - (void) initValue{
@@ -65,31 +70,18 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     //Đặt giá trị là thời điểm hiện tại
     [self setValue:[self getValueFromTime]];
     previousValue = self.value;    
-    [self initUIlable];
     [self addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
 }
 
-- (void) initUIlable{
-    UIFont *defaultFont = [UIFont fontWithName:@"Helvetica" size:17];
+- (void) initButtonContainTime{
     float coorX = self.frame.origin.x;
-    float a, b, c, d;
-    button = [[UIButton alloc] init];
     CGRect frameButton;
-    [button setTitle:[self textForButton] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    button.titleLabel.text = [self textForButton];
-    //Vẽ khung
-    button.layer.backgroundColor = [UIColor whiteColor].CGColor;
-    [[UIColor whiteColor] getHue:&a saturation:&b brightness:&c alpha:&d];
-    button.layer.borderColor = [UIColor colorWithHue:a saturation:b brightness:c/2 alpha:d].CGColor;
-    button.layer.borderWidth = 0.5;
-    button.layer.cornerRadius = 9;
-    button.titleLabel.font = defaultFont;
     
+    button = [[TECustomRoundRectButton alloc] init];
+    [button setTitle:[self textForButton] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(showPopup) forControlEvents:UIControlEventTouchUpOutside | UIControlEventTouchUpInside];
     //Đặt frame cho popup
     popupFrame = CGRectMake(self.frame.origin.x, self.frame.origin.y - 30, self.frame.size.width, 30);
-    
-    [button addTarget:self action:@selector(showPopup) forControlEvents:UIControlEventAllTouchEvents];
     
     CGFloat fontSize = button.titleLabel.font.pointSize + 5;
     frameButton.size.height = fontSize;
@@ -116,45 +108,25 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     [button setFrame:frameButton];
     [self.superview addSubview:button];
     //CGRect k = self.superview.frame;
+}
 
+- (void) initPopup
+{
     //Khởi tạo popup menu
     popupMenu = [[TEPopupView alloc] initWithFrame:CGRectMake(self.frame.origin.x - 5, self.frame.origin.y -32 - button.frame.size.height, self.frame.size.width + 10, 30)];
-    //popupMenu.alpha = 0.5;
-    popupMenu.layer.cornerRadius = 5;
-    popupMenu.layer.borderWidth = 0;
-    //popupMenu.layer.masksToBounds = YES;
     popupMenu.currentValue = 0;
     popupMenu.afterValue = 0;
     [popupMenu setDelegate:self];
-    
     [popupMenu setFrameforTriangular:(button.frame.origin.x + button.frame.size.width/2 - popupMenu.frame.origin.x - 5)];
-    
     popupMenu.miniSlider.minimumValue = self.minimumValue;
     popupMenu.miniSlider.maximumValue = self.maximumValue;
     [popupMenu addSlider];
-    //[popupMenu addSubview:miniSlider];
 }
 
 //Gọi ra popup khi click vào label
 - (void) showPopup
 {
-    UIView *superView = self.superview;
-    //Disable tất cả các view trừ popup
-    for (UIView* subView in superView.subviews)
-    {
-        [subView setUserInteractionEnabled:NO];
-    }
-    [popupMenu setUserInteractionEnabled:YES];
-    //[self setUserInteractionEnabled:YES];
-    
-    [self.superview addSubview:popupMenu];
-    [popupMenu resetValue];
-    
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.4];
-    [popupMenu setAlpha:1.0];
-    [UIView commitAnimations];
-    [UIView setAnimationDuration:0.0];
+    [popupMenu showPopup:self.superview];
 }
 
 - (void) hidePopup
@@ -190,8 +162,10 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     int progress = lroundf(sender.value);
     [self getDateFromInt:progress];
     [button setTitle:[self textForButton] forState:UIControlStateNormal];
+    [delegate selectedTime:[self textForButton]];
     CGFloat coorX = button.frame.origin.x;
     
+    //Tính toán vị trí button dựa vào giá trị của slider
     switch (type) {
         case sldTime:
             coorX += ((sender.value - previousValue) * (self.frame.size.width / (self.maximumValue - self.minimumValue + 155)));
@@ -203,6 +177,7 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
             break;
     }
     
+    //Nếu quá 
     if(coorX < self.frame.origin.x){
         coorX += button.frame.size.width + 17;
     }

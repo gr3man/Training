@@ -16,6 +16,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        self.layer.cornerRadius = 5;
+        self.layer.borderWidth = 0;
+        
         miniSlider = [[UISlider alloc] initWithFrame: CGRectMake(5, 4, self.frame.size.width - 10, 23)];
         [self setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background_maptools_view.png"]]];
         [miniSlider addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
@@ -47,6 +50,25 @@
 - (void) setFrameforTriangular:(float)coorX
 {
     [triangular setFrame:CGRectMake(coorX, self.frame.size.height, triangular.frame.size.width, triangular.frame.size.height)];
+}
+
+- (void) showPopup : (UIView *) view
+{
+    //Disable tất cả các view trừ popup
+    for (UIView* subView in view.subviews)
+    {
+        [subView setUserInteractionEnabled:NO];
+    }
+    [self setUserInteractionEnabled:YES];
+    //[self setUserInteractionEnabled:YES];
+    
+    [view addSubview:self];
+    [self resetValue];
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.4];
+    [self setAlpha:1.0];
+    [UIView commitAnimations];
 }
 
 /*

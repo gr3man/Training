@@ -24,6 +24,7 @@
 		C7CC4D42175ED693007B7209 /* background_maptools_view.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CC4D41175ED693007B7209 /* background_maptools_view.png */; };
 		C7CC4D45175ED69E007B7209 /* btn-arrow-down.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CC4D43175ED69E007B7209 /* btn-arrow-down.png */; };
 		C7CC4D46175ED69E007B7209 /* btn-arrow-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CC4D44175ED69E007B7209 /* btn-arrow-down@2x.png */; };
+		C7D5ECC517602064008B302A /* TECustomRoundRectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D5ECC417602064008B302A /* TECustomRoundRectButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,8 @@
 		C7CC4D41175ED693007B7209 /* background_maptools_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_maptools_view.png; sourceTree = "<group>"; };
 		C7CC4D43175ED69E007B7209 /* btn-arrow-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-arrow-down.png"; sourceTree = "<group>"; };
 		C7CC4D44175ED69E007B7209 /* btn-arrow-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-arrow-down@2x.png"; sourceTree = "<group>"; };
+		C7D5ECC317602064008B302A /* TECustomRoundRectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TECustomRoundRectButton.h; sourceTree = "<group>"; };
+		C7D5ECC417602064008B302A /* TECustomRoundRectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TECustomRoundRectButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				C7283889175C2CEC00D32DCF /* TECustomSlider.m */,
 				C7283890175C4E1800D32DCF /* TEPopupView.h */,
 				C7283891175C4E1800D32DCF /* TEPopupView.m */,
+				C7D5ECC317602064008B302A /* TECustomRoundRectButton.h */,
+				C7D5ECC417602064008B302A /* TECustomRoundRectButton.m */,
 			);
 			path = Exercise7_3;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 				C728387F175C293C00D32DCF /* TEViewController.m in Sources */,
 				C728388A175C2CEC00D32DCF /* TECustomSlider.m in Sources */,
 				C7283892175C4E1800D32DCF /* TEPopupView.m in Sources */,
+				C7D5ECC517602064008B302A /* TECustomRoundRectButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
