@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @protocol PopupMenuDelegate <NSObject>
 
@@ -16,21 +17,19 @@
 
 @interface TEPopupView : UIView
 {
-    float currentValue;
-    float afterValue;
+    float originalValue;
+    float midValue;
     id<PopupMenuDelegate> delegate;
     UISlider *miniSlider;
-    BOOL invi;
     UIImageView *triangular;
 }
-@property (assign) float currentValue;
-@property (assign) float afterValue;
-@property (assign) BOOL invi;
+@property (assign) float originalValue;
+@property (assign) float midValue;
 @property (readwrite, nonatomic) UISlider *miniSlider;
 @property (retain) id<PopupMenuDelegate> delegate;
 - (IBAction)valueChanged:(UISlider *)sender;
 - (void) addSlider;
-- (void) resetValue;
 - (void) setFrameforTriangular : (float) coorX;
+- (void) showPopup : (UIView *) view;
 
 @end

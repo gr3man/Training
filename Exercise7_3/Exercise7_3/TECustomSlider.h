@@ -8,17 +8,24 @@
 
 #import <UIKit/UIKit.h>
 #import "TEPopupView.h"
+#import "TECustomRoundRectButton.h"
 
 typedef enum {
 	sldDate,
     sldTime
 } TypeSlider;
 
+@protocol CustomSliderDelegate <NSObject>
+
+- (void) selectedTime : (NSString *) time;
+
+@end
+
 @interface TECustomSlider : UISlider <PopupMenuDelegate>
 
 {
     TypeSlider type;
-    UIButton *button;
+    TECustomRoundRectButton *button;
     NSDate *date;
     NSInteger min;
     NSInteger hour;
@@ -27,7 +34,9 @@ typedef enum {
     NSInteger month;
     NSInteger year;
     float previousValue;
-    CGRect popupFrame;
+    UIView *viewForPopup;
+    CGRect frameContainPopup;
+    id<CustomSliderDelegate> delegate;
 }
 
 //- (id)initWithSlider:(UISlider *) newSlider;
@@ -37,10 +46,13 @@ typedef enum {
 @property (assign, nonatomic) NSInteger ratioZoom;
 @property (retain, nonatomic) TEPopupView *popupMenu;
 @property (retain, nonatomic) UIButton *button;
+@property (retain) id<CustomSliderDelegate> delegate;
 
 - (void)setType : (TypeSlider)newType;
 - (void)setDate : (NSDate *)newDate;
-- (void) initUIlable;
+- (NSDate *) date;
+- (void) initButtonContainTime;
+- (void) initPopup;
 - (void) initValue;
 - (float)getValueFromTime;
 - (void)getDateFromInt : (int) value;
@@ -50,7 +62,9 @@ typedef enum {
 - (IBAction)valueChanged:(UISlider *)sender;
 //- (void) changeLocation:(UIInterfaceOrientation)orient;
 - (void) showPopup;
-- (void) hidePopup;
+- (void) hidePopup : (UIView *) view;
+- (void) setViewForPopup : (UIView *) view;
+- (void) setFrameContainPopup : (CGRect) frame;
 
 
 @end
