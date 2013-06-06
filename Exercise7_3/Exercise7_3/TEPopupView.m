@@ -1,9 +1,9 @@
 //
-//  TEPopupView.m
-//  Exercise7_3
+// TEPopupView.m
+// Exercise7_3
 //
-//  Created by Tuấn Nguyễn Anh on 6/3/13.
-//  Copyright (c) 2013 Tuấn Nguyễn Anh. All rights reserved.
+// Created by Tuấn Nguyễn Anh on 6/3/13.
+// Copyright (c) 2013 Tuấn Nguyễn Anh. All rights reserved.
 //
 
 #import "TEPopupView.h"
@@ -16,6 +16,10 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        self.layer.cornerRadius = 5;
+        self.layer.borderWidth = 0;
+        originalValue = 0;
+        
         miniSlider = [[UISlider alloc] initWithFrame: CGRectMake(5, 4, self.frame.size.width - 10, 23)];
         [self setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background_maptools_view.png"]]];
         [miniSlider addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
@@ -27,13 +31,8 @@
 
 - (void) addSlider
 {
-    miniSlider.value = miniSlider.maximumValue/2;
+    miniSlider.value = (miniSlider.maximumValue -  miniSlider.minimumValue)/2;
     [self addSubview:miniSlider];
-}
-
-- (void) resetValue
-{
-    miniSlider.value = miniSlider.maximumValue/2;
 }
 
 - (IBAction)valueChanged:(UISlider *)sender
@@ -48,16 +47,30 @@
 
 - (void) showPopup : (UIView *) view
 {
+    //Disable tất cả các view trừ popup
+    for (UIView* subView in view.subviews)
+    {
+        [subView setUserInteractionEnabled:NO];
+    }
+    [self setUserInteractionEnabled:YES];
+    //[self setUserInteractionEnabled:YES];
     
+    [view addSubview:self];
+    miniSlider.value = (miniSlider.maximumValue - miniSlider.minimumValue)/2;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.4];
+    [self setAlpha:1.0];
+    [UIView commitAnimations];
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 @end

@@ -1,9 +1,9 @@
 //
-//  TECustomRoundRectButton.m
-//  Exercise7_3
+// TECustomRoundRectButton.m
+// Exercise7_3
 //
-//  Created by Tuấn Nguyễn Anh on 6/6/13.
-//  Copyright (c) 2013 Tuấn Nguyễn Anh. All rights reserved.
+// Created by Tuấn Nguyễn Anh on 6/6/13.
+// Copyright (c) 2013 Tuấn Nguyễn Anh. All rights reserved.
 //
 
 #import "TECustomRoundRectButton.h"
@@ -24,7 +24,7 @@
         defaultFont = [UIFont fontWithName:@"Helvetica" size:17];
         [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         self.titleLabel.font = defaultFont;
-
+        
     }
     return self;
 }
