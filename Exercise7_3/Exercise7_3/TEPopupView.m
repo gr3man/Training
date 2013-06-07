@@ -55,13 +55,28 @@
     [self setUserInteractionEnabled:YES];
     //[self setUserInteractionEnabled:YES];
     
-    [view addSubview:self];
+    //[view addSubview:self];
+    UIWindow *keyWindow = [[[UIApplication sharedApplication] delegate] window];
+    [keyWindow addSubview:self];
     miniSlider.value = (miniSlider.maximumValue - miniSlider.minimumValue)/2;
     
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.4];
     [self setAlpha:1.0];
     [UIView commitAnimations];
+}
+
++ (void) hidePopup:(UIView *)view
+{
+    for (UIView* subView in view.subviews)
+    {
+        if([subView isKindOfClass:[TEPopupView class]]){
+            [subView removeFromSuperview];
+        } else if (!subView.userInteractionEnabled){
+            [subView setUserInteractionEnabled:YES];
+        }
+        
+    }
 }
 
 /*

@@ -86,8 +86,7 @@
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [customSliderDate hidePopup:self.view];
-    [customSliderTime hidePopup:self.view];
+    [TEPopupView hidePopup:self.view];
 }
 
 @end

@@ -33,6 +33,7 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
  }
  */
 
+#pragma mark GetSet
 - (void) setType:(TypeSlider)newType{
     type = newType;
 }
@@ -56,6 +57,7 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     frameContainPopup = frame;
 }
 
+#pragma mark init
 //Khởi tạo Slider
 - (void) initValue{
     date = [NSDate date];
@@ -117,12 +119,8 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     //CGRect k = self.superview.frame;
 }
 
-- (void) initPopup
-{
-    //Khởi tạo popup menu
-    
-}
 
+#pragma mark Popup
 //Gọi ra popup khi click vào label
 - (void) showPopup
 {
@@ -140,15 +138,15 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     popupMenu.midValue = popupMenu.miniSlider.value;
 }
 
-- (void) hidePopup:(UIView *)view
-{
-    for (UIView* subView in view.subviews)
-    {
-        //Kích hoạt tất cả các subView của view chính
-        [subView setUserInteractionEnabled:YES];
-        [popupMenu removeFromSuperview];
-    }
-}
+//- (void) hidePopup:(UIView *)view
+//{
+//    for (UIView* subView in view.subviews)
+//    {
+//        //Kích hoạt tất cả các subView của view chính
+//        [subView setUserInteractionEnabled:YES];
+//        [popupMenu removeFromSuperview];
+//    }
+//}
 
 //Slider ở popup thay đổi giá trị
 - (void) miniSliderChange:(float)value
@@ -189,6 +187,8 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     [button setFrame:CGRectMake(coorX, button.frame.origin.y, button.frame.size.width, button.frame.size.height)];
     [popupMenu setFrameforTriangular:(button.frame.origin.x + button.frame.size.width/2 - popupMenu.frame.origin.x - 5)];
 }
+
+#pragma mark process date
 
 - (NSString *)textForButton{
     //Text cho button

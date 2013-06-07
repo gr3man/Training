@@ -31,5 +31,6 @@
 - (void) addSlider;
 - (void) setFrameforTriangular : (float) coorX;
 - (void) showPopup : (UIView *) view;
++ (void) hidePopup:(UIView *)view;
 
 @end

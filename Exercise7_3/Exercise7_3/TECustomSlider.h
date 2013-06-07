@@ -52,7 +52,6 @@ typedef enum {
 - (void)setDate : (NSDate *)newDate;
 - (NSDate *) date;
 - (void) initButtonContainTime;
-- (void) initPopup;
 - (void) initValue;
 - (float)getValueFromTime;
 - (void)getDateFromInt : (int) value;
@@ -62,7 +61,7 @@ typedef enum {
 - (IBAction)valueChanged:(UISlider *)sender;
 //- (void) changeLocation:(UIInterfaceOrientation)orient;
 - (void) showPopup;
-- (void) hidePopup : (UIView *) view;
+//- (void) hidePopup : (UIView *) view;
 - (void) setViewForPopup : (UIView *) view;
 - (void) setFrameContainPopup : (CGRect) frame;
 
