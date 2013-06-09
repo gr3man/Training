@@ -44,8 +44,6 @@
     [customSliderDate initButtonContainTime];
     [customSliderTime initButtonContainTime];
     
-    [customSliderDate setViewForPopup:self.view];
-    [customSliderTime setViewForPopup:self.view];
     [customSliderDate setFrameContainPopup:layoutView.frame];
     [customSliderTime setFrameContainPopup:layoutView.frame];
     customSliderDate.ratioZoom = 10;
@@ -84,9 +82,9 @@
 // [customSliderDate changeLocation:fromInterfaceOrientation];
 //}
 
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [TEPopupView hidePopup:self.view];
-}
+//- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    [TEPopupView hidePopup:self.view];
+//}
 
 @end

@@ -47,11 +47,6 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     return date;
 }
 
-- (void) setViewForPopup : (UIView *) view
-{
-    viewForPopup = view;
-}
-
 - (void) setFrameContainPopup:(CGRect)frame
 {
     frameContainPopup = frame;
@@ -133,7 +128,8 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     popupMenu.originalValue = self.value;
     [popupMenu addSlider];
     [popupMenu setFrameforTriangular:(button.frame.origin.x + button.frame.size.width/2 - popupMenu.frame.origin.x - 5)];
-    [popupMenu showPopup:viewForPopup];
+    //popupMenu.frameOfTriangular = CG
+    [popupMenu showPopup];
     
     popupMenu.midValue = popupMenu.miniSlider.value;
 }

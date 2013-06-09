@@ -34,7 +34,6 @@ typedef enum {
     NSInteger month;
     NSInteger year;
     float previousValue;
-    UIView *viewForPopup;
     CGRect frameContainPopup;
     id<CustomSliderDelegate> delegate;
 }
@@ -62,7 +61,6 @@ typedef enum {
 //- (void) changeLocation:(UIInterfaceOrientation)orient;
 - (void) showPopup;
 //- (void) hidePopup : (UIView *) view;
-- (void) setViewForPopup : (UIView *) view;
 - (void) setFrameContainPopup : (CGRect) frame;
 
 @end

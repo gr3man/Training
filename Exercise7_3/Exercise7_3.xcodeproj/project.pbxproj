@@ -22,6 +22,7 @@
 		C728388C175C314400D32DCF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C728388B175C314400D32DCF /* QuartzCore.framework */; };
 		C7283892175C4E1800D32DCF /* TEPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7283891175C4E1800D32DCF /* TEPopupView.m */; };
 		C79AF7FA1760E83B006BCA63 /* TECustomRoundRectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C79AF7F91760E83B006BCA63 /* TECustomRoundRectButton.m */; };
+		C7B3A6151763943B004E7137 /* TEInterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B3A6141763943B004E7137 /* TEInterView.m */; };
 		C7CC4D42175ED693007B7209 /* background_maptools_view.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CC4D41175ED693007B7209 /* background_maptools_view.png */; };
 		C7CC4D45175ED69E007B7209 /* btn-arrow-down.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CC4D43175ED69E007B7209 /* btn-arrow-down.png */; };
 		C7CC4D46175ED69E007B7209 /* btn-arrow-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CC4D44175ED69E007B7209 /* btn-arrow-down@2x.png */; };
@@ -51,6 +52,8 @@
 		C7283891175C4E1800D32DCF /* TEPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEPopupView.m; sourceTree = "<group>"; };
 		C79AF7F81760E83B006BCA63 /* TECustomRoundRectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TECustomRoundRectButton.h; sourceTree = "<group>"; };
 		C79AF7F91760E83B006BCA63 /* TECustomRoundRectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TECustomRoundRectButton.m; sourceTree = "<group>"; };
+		C7B3A6131763943B004E7137 /* TEInterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEInterView.h; sourceTree = "<group>"; };
+		C7B3A6141763943B004E7137 /* TEInterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEInterView.m; sourceTree = "<group>"; };
 		C7CC4D41175ED693007B7209 /* background_maptools_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_maptools_view.png; sourceTree = "<group>"; };
 		C7CC4D43175ED69E007B7209 /* btn-arrow-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-arrow-down.png"; sourceTree = "<group>"; };
 		C7CC4D44175ED69E007B7209 /* btn-arrow-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-arrow-down@2x.png"; sourceTree = "<group>"; };
@@ -114,6 +117,8 @@
 				C7283891175C4E1800D32DCF /* TEPopupView.m */,
 				C79AF7F81760E83B006BCA63 /* TECustomRoundRectButton.h */,
 				C79AF7F91760E83B006BCA63 /* TECustomRoundRectButton.m */,
+				C7B3A6131763943B004E7137 /* TEInterView.h */,
+				C7B3A6141763943B004E7137 /* TEInterView.m */,
 			);
 			path = Exercise7_3;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				C728388A175C2CEC00D32DCF /* TECustomSlider.m in Sources */,
 				C7283892175C4E1800D32DCF /* TEPopupView.m in Sources */,
 				C79AF7FA1760E83B006BCA63 /* TECustomRoundRectButton.m in Sources */,
+				C7B3A6151763943B004E7137 /* TEInterView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
