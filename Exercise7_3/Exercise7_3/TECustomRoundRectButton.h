@@ -20,6 +20,6 @@
 @property (retain, nonatomic) UIFont *defaultFont;
 @property (nonatomic, retain) UIColor *rectColor;
 
-- (void) setDefaultFont:(UIFont *)newFont;
+- (void)setDefaultFont:(UIFont *)newFont;
 
 @end

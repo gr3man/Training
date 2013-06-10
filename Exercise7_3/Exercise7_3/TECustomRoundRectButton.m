@@ -29,7 +29,7 @@
     return self;
 }
 
-- (void) setDefaultFont:(UIFont *)newFont
+- (void)setDefaultFont:(UIFont *)newFont
 {
     defaultFont = newFont;
     self.titleLabel.font = defaultFont;

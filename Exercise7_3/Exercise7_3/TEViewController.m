@@ -39,18 +39,16 @@
     
     [customSliderTime setType:sldTime];
     [customSliderDate setType:sldDate];
-    [customSliderDate initValue];
-    [customSliderTime initValue];
+    [customSliderDate setRatioZoom:10];
+    [customSliderTime setRatioZoom:40];
+    
+    [customSliderDate initValueOfSlider];
+    [customSliderTime initValueOfSlider];
     [customSliderDate initButtonContainTime];
     [customSliderTime initButtonContainTime];
     
-    [customSliderDate setFrameContainPopup:layoutView.frame];
-    [customSliderTime setFrameContainPopup:layoutView.frame];
-    customSliderDate.ratioZoom = 10;
-    customSliderTime.ratioZoom = 40;
-    [customSliderDate setDate:[NSDate date]];
-    [customSliderTime setDate:[NSDate date]];
-    
+//    [customSliderDate setFrameContainPopup:layoutView.frame];
+//    [customSliderTime setFrameContainPopup:layoutView.frame];
     [self.view addSubview:layoutView];
 }
 

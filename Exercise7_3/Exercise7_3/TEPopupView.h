@@ -10,7 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "TEInterView.h"
 
-@protocol PopupMenuDelegate <NSObject>
+@protocol TEPopupMenuDelegate <NSObject>
 
 - (void) miniSliderChange : (float) value;
 
@@ -20,7 +20,7 @@
 {
     float originalValue;
     float midValue;
-    id<PopupMenuDelegate> delegate;
+    id<TEPopupMenuDelegate> delegate;
     UISlider *miniSlider;
     TEInterView *viewForPopup;
     CGRect frameOfTriangular;
@@ -34,11 +34,12 @@
 @property (assign) CGRect frameOfTriangular;
 @property CGFloat strokeWidth;
 @property CGFloat cornerRadius;
-@property (retain) id<PopupMenuDelegate> delegate;
+@property (retain) id<TEPopupMenuDelegate> delegate;
+
 - (IBAction)valueChanged:(UISlider *)sender;
-- (void) addSlider;
-- (void) setFrameforTriangular : (float) coorX;
-- (void) showPopup;
+- (void)addSlider;
+- (void)setFrameforTriangular:(float)coorX;
+- (void)showPopup;
 //+ (void) hidePopup:(UIView *)view;
 
 @end

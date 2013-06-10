@@ -15,13 +15,13 @@ typedef enum {
     sldTime
 } TypeSlider;
 
-@protocol CustomSliderDelegate <NSObject>
+@protocol TECustomSliderDelegate <NSObject>
 
 - (void) selectedTime : (NSString *) time;
 
 @end
 
-@interface TECustomSlider : UISlider <PopupMenuDelegate>
+@interface TECustomSlider : UISlider <TEPopupMenuDelegate>
 
 {
     TypeSlider type;
@@ -34,33 +34,25 @@ typedef enum {
     NSInteger month;
     NSInteger year;
     float previousValue;
-    CGRect frameContainPopup;
-    id<CustomSliderDelegate> delegate;
+    id<TECustomSliderDelegate> delegate;
 }
-
-//- (id)initWithSlider:(UISlider *) newSlider;
-//- (void)setSlider : (UISlider *)newSlider;
-//- (UISlider *)slider;
 
 @property (assign, nonatomic) NSInteger ratioZoom;
 @property (retain, nonatomic) TEPopupView *popupMenu;
 @property (retain, nonatomic) UIButton *button;
-@property (retain) id<CustomSliderDelegate> delegate;
+@property (retain) id<TECustomSliderDelegate> delegate;
 
-- (void)setType : (TypeSlider)newType;
-- (void)setDate : (NSDate *)newDate;
-- (NSDate *) date;
-- (void) initButtonContainTime;
-- (void) initValue;
+- (void)setType:(TypeSlider)newType;
+- (void)setDate:(NSDate *)newDate;
+- (NSDate *)date;
+- (void)initButtonContainTime;
+- (void)initValueOfSlider;
 - (float)getValueFromTime;
-- (void)getDateFromInt : (int) value;
-- (void)getDateComponent : (NSDate *)dateValue;
+- (void)getDateFromInt:(int)value;
+- (void)getDateComponent:(NSDate *)dateValue;
 - (bool)isLeapYear;
-- (NSString *) textForButton;
+- (NSString *)generateStringOfTime;
 - (IBAction)valueChanged:(UISlider *)sender;
-//- (void) changeLocation:(UIInterfaceOrientation)orient;
 - (void) showPopup;
-//- (void) hidePopup : (UIView *) view;
-- (void) setFrameContainPopup : (CGRect) frame;
 
 @end
