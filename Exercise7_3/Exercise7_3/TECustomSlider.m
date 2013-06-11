@@ -13,9 +13,10 @@
 #define NUMBER_DAY_OF_LEAP_YEAR 365
 
 int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
+float spaceToMiniSlider;
 
 @implementation TECustomSlider
-@synthesize popupMenu, ratioZoom, button, delegate;
+@synthesize popupMenu, ratioZoom, buttonDisplayText, delegate;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -23,6 +24,13 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     if (self) {
         // Initialization code
         date = [NSDate date];
+        [self getDateComponent:date];
+        [self addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
+        buttonDisplayText = [[TECustomRoundRectButton alloc] init];
+        spaceToMiniSlider = 5;
+        [self setType:sldDate];
+        ratioZoom = 10;
+        [buttonDisplayText addTarget:self action:@selector(showPopup) forControlEvents:UIControlEventTouchUpOutside | UIControlEventTouchUpInside];
     }
     return self;
 }
@@ -39,27 +47,8 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
 #pragma mark GetSet
 - (void)setType:(TypeSlider)newType{
     type = newType;
-}
-
-- (void) setDate:(NSDate *)newDate{
-    date = newDate;
-}
-
-- (NSDate *)date
-{
-    return date;
-}
-
-//- (void) setFrameContainPopup:(CGRect)frame
-//{
-//    frameContainPopup = frame;
-//}
-
-#pragma mark init
-//Khởi tạo Slider
-- (void)initValueOfSlider{
-    date = [NSDate date];
-    [self getDateComponent:date];
+    float coorX = self.frame.origin.x;
+    CGRect frameButton;
     //Đặt giá trị max, min cho slider
     switch (type) {
         case sldDate:
@@ -79,57 +68,58 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     //Đặt giá trị là thời điểm hiện tại
     [self setValue:[self getValueFromTime]];
     previousValue = self.value;
-    [self addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
-}
+    
+    [buttonDisplayText setTitle:[self generateStringOfTime] forState:UIControlStateNormal];
+    frameButton.size.height = buttonDisplayText.titleLabel.font.pointSize + 5;
+    frameButton.size.width = [buttonDisplayText.titleLabel.text sizeWithFont:buttonDisplayText.titleLabel.font].width + 2;
 
-- (void)initButtonContainTime{
-    float coorX = self.frame.origin.x;
-    CGRect frameButton;
-    
-    button = [[TECustomRoundRectButton alloc] init];
-    [button setTitle:[self generateStringOfTime] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(showPopup) forControlEvents:UIControlEventTouchUpOutside | UIControlEventTouchUpInside];
-    
-    CGFloat fontSize = button.titleLabel.font.pointSize + 5;
-    frameButton.size.height = fontSize;
-    //Tính toán kích thước, vị trí label
-    switch (type) {
-        case sldDate:
-            frameButton.size.width = 88;
-            frameButton.origin.y -= 10;
-            coorX += self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 38)) - frameButton.size.width + 3;
-            break;
-        case sldTime:
-            frameButton.size.width = 45;
-            frameButton.origin.y -= 10;
-            coorX += self.value * (self.frame.size.width / (self.maximumValue - self.minimumValue + 155)) - frameButton.size.width + 4;
-        default:
-            break;
-    }
+    coorX += ((self.value-self.minimumValue)/(self.maximumValue-self.minimumValue))*(self.frame.size.width-self.currentThumbImage.size.width) - frameButton.size.width + 4;
     //Kiểm tra nếu label bị quá slider thì đặt lại label
     if(coorX < self.frame.origin.x){
         coorX += frameButton.size.width + 17;
     }
     frameButton.origin.x = coorX;
     frameButton.origin.y = self.frame.origin.y - 19;
-    [button setFrame:frameButton];
-    [self.superview addSubview:button];
+    [buttonDisplayText setFrame:frameButton];
 }
 
+- (void) setDate:(NSDate *)newDate{
+    date = newDate;
+}
+
+- (NSDate *)date
+{
+    return date;
+}
+
+#pragma mark init
+//Khởi tạo Slider
+- (void)initValueOfSlider{
+
+}
+
+- (void)initButtonDisplayText{
+
+}
+
+- (void)addButtonToView
+{
+    [self.superview addSubview:buttonDisplayText];
+}
 
 #pragma mark Popup
 //Gọi ra popup khi click vào label
 - (void)showPopup
 {
-    popupMenu = [[TEPopupView alloc] initWithFrame:CGRectMake(self.frame.origin.x + self.superview.frame.origin.x - 5, self.frame.origin.y + self.superview.frame.origin.y -32 - button.frame.size.height, self.frame.size.width + 10, 30)];
-    
+    popupMenu = [[TEPopupView alloc] initWithFrame:CGRectMake(self.frame.origin.x + self.superview.frame.origin.x - spaceToMiniSlider, self.frame.origin.y + self.superview.frame.origin.y + self.frame.size.height, self.frame.size.width + 2*spaceToMiniSlider, 30)];
     [popupMenu setDelegate:self];
-    
+    [popupMenu setSpaceToMinislider:spaceToMiniSlider];
     [popupMenu.miniSlider setMinimumValue:self.minimumValue];
     [popupMenu.miniSlider setMaximumValue:self.maximumValue];
     [popupMenu setOriginalValue:self.value];
     [popupMenu addSlider];
-    [popupMenu setFrameforTriangular:(button.frame.origin.x + button.frame.size.width/2 - popupMenu.frame.origin.x - 5)];
+    //(((aSlider.value-aSlider.minimumValue)/(aSlider.maximumValue-aSlider.minimumValu‌​e)) * sliderRange)
+    [popupMenu setFrameforTriangular:((self.value-self.minimumValue)/(self.maximumValue-self.minimumValue))*(self.frame.size.width-self.currentThumbImage.size.width) + self.currentThumbImage.size.width/2 - spaceToMiniSlider/2];
     [popupMenu showPopup];
     
     popupMenu.midValue = popupMenu.miniSlider.value;
@@ -146,33 +136,24 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
 //Sự kiện khi giá trị thay đổi
 - (IBAction)valueChanged:(UISlider *)sender{
     int progress = lroundf(sender.value);
-    [self getDateFromInt:progress];
-    [button setTitle:[self generateStringOfTime] forState:UIControlStateNormal];
+    [self getTimeFromValue:progress];
+    [buttonDisplayText setTitle:[self generateStringOfTime] forState:UIControlStateNormal];
     [delegate selectedTime:[self generateStringOfTime]];
-    CGFloat coorX = button.frame.origin.x;
+    CGFloat coorX = buttonDisplayText.frame.origin.x;
     
     //Tính toán vị trí button dựa vào giá trị của slider
-    switch (type) {
-        case sldTime:
-            coorX += ((sender.value - previousValue) * (self.frame.size.width / (self.maximumValue - self.minimumValue + 155)));
-            break;
-        case sldDate:
-            coorX += ((sender.value - previousValue) * (self.frame.size.width / (self.maximumValue - self.minimumValue + 38)));
-            break;
-        default:
-            break;
-    }
+    coorX = ((self.value-self.minimumValue)/(self.maximumValue-self.minimumValue))*(self.frame.size.width-self.currentThumbImage.size.width) + self.frame.origin.x - buttonDisplayText.frame.size.width+4;
     
     //Nếu quá
     if(coorX < self.frame.origin.x){
-        coorX += button.frame.size.width + 17;
+        coorX += buttonDisplayText.frame.size.width + 15;
     }
-    if(coorX + button.frame.size.width > self.frame.size.width + self.frame.origin.x){
-        coorX -= button.frame.size.width + 17;
+    if(coorX + buttonDisplayText.frame.size.width > self.frame.size.width + self.frame.origin.x){
+        coorX -= buttonDisplayText.frame.size.width + 15;
     }
     previousValue = sender.value;
-    [button setFrame:CGRectMake(coorX, button.frame.origin.y, button.frame.size.width, button.frame.size.height)];
-    [popupMenu setFrameforTriangular:(button.frame.origin.x + button.frame.size.width/2 - popupMenu.frame.origin.x - 5)];
+    [buttonDisplayText setFrame:CGRectMake(coorX, buttonDisplayText.frame.origin.y, buttonDisplayText.frame.size.width, buttonDisplayText.frame.size.height)];
+    [popupMenu setFrameforTriangular:((self.value-self.minimumValue)/(self.maximumValue-self.minimumValue))*(self.frame.size.width-self.currentThumbImage.size.width) + self.currentThumbImage.size.width/2 - spaceToMiniSlider/2];
 }
 
 #pragma mark process date
@@ -184,6 +165,7 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
         case sldDate:
             return [NSString stringWithFormat:@"%02d/%02d/%04d",day, month, year];
             break;
+            
         case sldTime:
             return [NSString stringWithFormat:@"%02d:%02d",hour, min];
             break;
@@ -192,7 +174,7 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     }
 }
 
-- (void)getDateFromInt:(int)value{
+- (void)getTimeFromValue:(int)value{
     //Lấy ra các giá trị ngày tháng năm từ value trên slider
     month = 0;
     switch (type) {

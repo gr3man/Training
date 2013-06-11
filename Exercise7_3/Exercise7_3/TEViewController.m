@@ -37,18 +37,11 @@
     [layoutView addSubview:customSliderDate];
     [layoutView addSubview:customSliderTime];
     
+    [customSliderTime addButtonToView];
+    [customSliderDate addButtonToView];
     [customSliderTime setType:sldTime];
-    [customSliderDate setType:sldDate];
-    [customSliderDate setRatioZoom:10];
     [customSliderTime setRatioZoom:40];
-    
-    [customSliderDate initValueOfSlider];
-    [customSliderTime initValueOfSlider];
-    [customSliderDate initButtonContainTime];
-    [customSliderTime initButtonContainTime];
-    
-//    [customSliderDate setFrameContainPopup:layoutView.frame];
-//    [customSliderTime setFrameContainPopup:layoutView.frame];
+
     [self.view addSubview:layoutView];
 }
 

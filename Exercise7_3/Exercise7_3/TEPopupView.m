@@ -7,9 +7,10 @@
 //
 
 #import "TEPopupView.h"
+#import "TECustomSlider.h"
 
 @implementation TEPopupView
-@synthesize miniSlider, delegate, originalValue, midValue, viewForPopup, frameOfTriangular, strokeWidth, cornerRadius;
+@synthesize miniSlider, delegate, originalValue, midValue, viewForPopup, frameOfTriangular, strokeWidth, cornerRadius, spaceToMinislider;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -17,8 +18,7 @@
     if (self) {
         // Initialization code
         originalValue = 0;
-        
-        miniSlider = [[UISlider alloc] initWithFrame: CGRectMake(5, 4, self.frame.size.width - 10, 23)];
+        miniSlider = [[UISlider alloc] initWithFrame: CGRectMake(spaceToMinislider, 6.5, self.frame.size.width - spaceToMinislider*2, 23)];
         //[self setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background_maptools_view.png"]]];
         [self setBackgroundColor:[UIColor clearColor]];
         strokeWidth = 0;
@@ -42,7 +42,7 @@
 
 - (void)setFrameforTriangular:(float)coorX
 {
-    frameOfTriangular = CGRectMake(coorX, self.frame.size.height, 15, 5);
+    frameOfTriangular = CGRectMake(coorX, 0, 15, 5);
     //Vẽ lại UIView
     [self setNeedsDisplay];
 }
@@ -91,18 +91,23 @@
      CGFloat minx = CGRectGetMinX(rect) + strokeWidth;
      CGFloat midx = CGRectGetMidX(rect);
      CGFloat maxx = CGRectGetMaxX(rect) - strokeWidth;
-     CGFloat miny = CGRectGetMinY(rect) + strokeWidth;
-     CGFloat midy = CGRectGetMidY(rect);
+     CGFloat miny = CGRectGetMinY(rect) + strokeWidth + frameOfTriangular.size.height;
+     CGFloat midy = CGRectGetMidY(rect) + frameOfTriangular.size.height/2;
      CGFloat maxy = CGRectGetMaxY(rect) - strokeWidth - frameOfTriangular.size.height;
      
      CGContextMoveToPoint(context, minx, midy);
      CGContextAddArcToPoint(context, minx, miny, midx, miny, cornerRadius);
+     
+     CGContextAddLineToPoint(context, frameOfTriangular.origin.x, miny);
+     CGContextAddLineToPoint(context, frameOfTriangular.origin.x + frameOfTriangular.size.width/2, miny - frameOfTriangular.size.height);
+     CGContextAddLineToPoint(context, frameOfTriangular.origin.x + frameOfTriangular.size.width, miny);
+     
      CGContextAddArcToPoint(context, maxx, miny, maxx, midy, cornerRadius);
      CGContextAddArcToPoint(context, maxx, maxy, frameOfTriangular.origin.x + frameOfTriangular.size.width, maxy, cornerRadius);
      //Vẽ tam giác
-     CGContextAddLineToPoint(context, frameOfTriangular.origin.x + frameOfTriangular.size.width, maxy);
-     CGContextAddLineToPoint(context, frameOfTriangular.origin.x + frameOfTriangular.size.width/2, frameOfTriangular.size.height + maxy);
-     CGContextAddLineToPoint(context, frameOfTriangular.origin.x, maxy);
+//     CGContextAddLineToPoint(context, frameOfTriangular.origin.x + frameOfTriangular.size.width, maxy);
+//     CGContextAddLineToPoint(context, frameOfTriangular.origin.x + frameOfTriangular.size.width/2, frameOfTriangular.size.height + maxy);
+//     CGContextAddLineToPoint(context, frameOfTriangular.origin.x, maxy);
      
      CGContextAddArcToPoint(context, minx, maxy, minx, midy, cornerRadius);
      

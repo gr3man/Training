@@ -25,7 +25,7 @@ typedef enum {
 
 {
     TypeSlider type;
-    TECustomRoundRectButton *button;
+    TECustomRoundRectButton *buttonDisplayText;
     NSDate *date;
     NSInteger min;
     NSInteger hour;
@@ -33,23 +33,25 @@ typedef enum {
     NSInteger day;
     NSInteger month;
     NSInteger year;
+    NSInteger ratioZoom;
     float previousValue;
     id<TECustomSliderDelegate> delegate;
 }
 
 @property (assign, nonatomic) NSInteger ratioZoom;
 @property (retain, nonatomic) TEPopupView *popupMenu;
-@property (retain, nonatomic) UIButton *button;
+@property (retain, nonatomic) UIButton *buttonDisplayText;
 @property (retain) id<TECustomSliderDelegate> delegate;
 
 - (void)setType:(TypeSlider)newType;
 - (void)setDate:(NSDate *)newDate;
 - (NSDate *)date;
-- (void)initButtonContainTime;
+- (void)initButtonDisplayText;
 - (void)initValueOfSlider;
 - (float)getValueFromTime;
-- (void)getDateFromInt:(int)value;
+- (void)getTimeFromValue:(int)value;
 - (void)getDateComponent:(NSDate *)dateValue;
+- (void) addButtonToView;
 - (bool)isLeapYear;
 - (NSString *)generateStringOfTime;
 - (IBAction)valueChanged:(UISlider *)sender;

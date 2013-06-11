@@ -26,6 +26,7 @@
     CGRect frameOfTriangular;
     CGFloat strokeWidth;
     CGFloat cornerRadius;
+    float spaceToMinislider;
 }
 @property (assign) float originalValue;
 @property (assign) float midValue;
@@ -34,6 +35,7 @@
 @property (assign) CGRect frameOfTriangular;
 @property CGFloat strokeWidth;
 @property CGFloat cornerRadius;
+@property float spaceToMinislider;
 @property (retain) id<TEPopupMenuDelegate> delegate;
 
 - (IBAction)valueChanged:(UISlider *)sender;
