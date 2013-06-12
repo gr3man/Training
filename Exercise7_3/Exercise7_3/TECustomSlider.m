@@ -93,10 +93,6 @@ float spaceToMiniSlider;
 }
 
 #pragma mark init
-//Khởi tạo Slider
-- (void)initValueOfSlider{
-
-}
 
 - (void)initButtonDisplayText{
 

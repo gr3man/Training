@@ -47,7 +47,6 @@ typedef enum {
 - (void)setDate:(NSDate *)newDate;
 - (NSDate *)date;
 - (void)initButtonDisplayText;
-- (void)initValueOfSlider;
 - (float)getValueFromTime;
 - (void)getTimeFromValue:(int)value;
 - (void)getDateComponent:(NSDate *)dateValue;
