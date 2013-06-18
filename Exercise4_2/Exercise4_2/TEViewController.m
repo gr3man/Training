@@ -27,7 +27,7 @@ UITextField *activeField;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.fields = @[@[@{@"label":@"Name", @"placeHolder":@"test filght"}],
+    self.fields = @[@[@{@"label":@"Name", @"placeHolder":@"test filght 1"}],
                     @[@{@"label":@"Address", @"placeHolder":@"example@gmail.com"}],
                     @[@{@"label":@"Password", @"placeHolder":@"Required"}],
                     @[@{@"label":@"Description", @"placeHolder":@"My Gmail Account"}],
