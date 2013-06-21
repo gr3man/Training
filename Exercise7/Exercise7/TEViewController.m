@@ -22,7 +22,7 @@ int numberDate[] = {31,28,31,30,31,30,31,31,30,31,30,31};
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //test 6
+    //test 7
 	// Do any additional setup after loading the view, typically from a nib.
     NSDate *today = [NSDate date];
     
