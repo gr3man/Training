@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "TEScrollFilterPicker.h"
 
-@interface TEViewController : UIViewController
+@interface TEViewController : UIViewController <ScrollForFliterDelegate>
+{
+    UIImageView *viewShowImage;
+}
+
+@property (retain, nonatomic) UIImageView *viewShowImage;
 
 @end

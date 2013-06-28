@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface TEButtonDisplayFilter : UIButton
+{
+    int index;
+}
+
+@property (assign, nonatomic) int index;
 
 @end

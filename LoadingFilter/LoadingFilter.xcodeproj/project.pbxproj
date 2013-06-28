@@ -23,6 +23,8 @@
 		C7BA3568177BDB7A00E505B7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7BA3567177BDB7A00E505B7 /* Default-568h@2x.png */; };
 		C7BA356B177BDB7A00E505B7 /* TEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BA356A177BDB7A00E505B7 /* TEViewController.m */; };
 		C7BA356E177BDB7A00E505B7 /* TEViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7BA356C177BDB7A00E505B7 /* TEViewController.xib */; };
+		C7C73C22177D29E3007A77F0 /* icon_app.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C73C21177D29E3007A77F0 /* icon_app.png */; };
+		C7C73C28177D3B3D007A77F0 /* TEButtonDisplayFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C73C27177D3B3C007A77F0 /* TEButtonDisplayFilter.m */; };
 		C7DAE9EE177BF3040076E718 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DAE9ED177BF3040076E718 /* CoreVideo.framework */; };
 		C7DAE9F2177BF34F0076E718 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DAE9F1177BF34F0076E718 /* AVFoundation.framework */; };
 		C7DAE9F4177BF3720076E718 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DAE9F3177BF3720076E718 /* OpenGLES.framework */; };
@@ -243,6 +245,9 @@
 		C7BA356A177BDB7A00E505B7 /* TEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TEViewController.m; sourceTree = "<group>"; };
 		C7BA356D177BDB7A00E505B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TEViewController.xib; sourceTree = "<group>"; };
 		C7BA3577177BDC2500E505B7 /* TEScrollFilterPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEScrollFilterPicker.h; sourceTree = "<group>"; };
+		C7C73C21177D29E3007A77F0 /* icon_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app.png; sourceTree = "<group>"; };
+		C7C73C26177D3B3C007A77F0 /* TEButtonDisplayFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEButtonDisplayFilter.h; sourceTree = "<group>"; };
+		C7C73C27177D3B3C007A77F0 /* TEButtonDisplayFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEButtonDisplayFilter.m; sourceTree = "<group>"; };
 		C7DAE9ED177BF3040076E718 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		C7DAE9F1177BF34F0076E718 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C7DAE9F3177BF3720076E718 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -652,6 +657,8 @@
 				C77FB0AC177C390B00541013 /* TEScrollFilterPicker.m */,
 				C77FB0B1177C3EAE00541013 /* TEImageFiltration.h */,
 				C77FB0B2177C3EAE00541013 /* TEImageFiltration.m */,
+				C7C73C26177D3B3C007A77F0 /* TEButtonDisplayFilter.h */,
+				C7C73C27177D3B3C007A77F0 /* TEButtonDisplayFilter.m */,
 			);
 			path = LoadingFilter;
 			sourceTree = "<group>";
@@ -659,6 +666,7 @@
 		C7BA3558177BDB7900E505B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C7C73C21177D29E3007A77F0 /* icon_app.png */,
 				C7A2E5E2177C244300E4A7F2 /* loading-icon.png */,
 				C7BA3559177BDB7900E505B7 /* LoadingFilter-Info.plist */,
 				C73F412F177BE32400776661 /* img1.jpg */,
@@ -1153,6 +1161,7 @@
 				C7DAF3B0177BF82B0076E718 /* License.txt in Resources */,
 				C7DAF3B1177BF82B0076E718 /* README.md in Resources */,
 				C7A2E5E3177C244300E4A7F2 /* loading-icon.png in Resources */,
+				C7C73C22177D29E3007A77F0 /* icon_app.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1328,6 +1337,7 @@
 				C7DAF3A8177BF82B0076E718 /* GPUImageView.m in Sources */,
 				C77FB0AD177C390B00541013 /* TEScrollFilterPicker.m in Sources */,
 				C77FB0B3177C3EAE00541013 /* TEImageFiltration.m in Sources */,
+				C7C73C28177D3B3D007A77F0 /* TEButtonDisplayFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

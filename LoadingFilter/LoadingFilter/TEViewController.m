@@ -13,19 +13,26 @@
 @end
 
 @implementation TEViewController
+@synthesize viewShowImage;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     TEScrollFilterPicker *imageList = [[TEScrollFilterPicker alloc] initWithFrame:CGRectMake(0, 10, self.view.frame.size.width, 70)];
-    imageList.pagingEnabled = YES;
+    imageList.delegateImage = self;
     [self.view addSubview:imageList];
-    UIImage *img = imageList.imageToFilter;
-     UIImageView *view = [[UIImageView alloc] initWithImage:img];
-    [view setFrame:CGRectMake(0, 100, self.view.frame.size.width, img.size.height/img.size.width * self.view.frame.size.width)];
-    [self.view addSubview:view];
     
+    UIImage *img = imageList.imageToFilter;
+    viewShowImage = [[UIImageView alloc] initWithImage:img];
+    [viewShowImage setFrame:CGRectMake(0, 100, self.view.frame.size.width, img.size.height/img.size.width * self.view.frame.size.width)];
+    [self.view addSubview:viewShowImage];
+    
+}
+
+- (void)didSelectFilteredImage:(UIImage *)filteredImage
+{
+    [viewShowImage setImage:filteredImage];
 }
 
 - (void)didReceiveMemoryWarning

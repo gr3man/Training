@@ -9,5 +9,6 @@
 #import "TEButtonDisplayFilter.h"
 
 @implementation TEButtonDisplayFilter
+@synthesize index;
 
 @end
