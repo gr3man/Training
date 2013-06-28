@@ -48,7 +48,6 @@ _Pragma("clang diagnostic pop") \
         
         if (self.isCancelled)
             return;
-        
         if(tempImage){
             self.image = tempImage;
             [(NSObject *)self.delegate performSelectorOnMainThread:@selector(imageFiltrationDidFinish:) withObject:self waitUntilDone:NO];
