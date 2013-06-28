@@ -10,30 +10,26 @@
 #import "UIImage+MTFilter.h"
 
 @implementation TEScrollFilterPicker
-@synthesize imageToFilter, filteredImages, filterQueue;
+@synthesize imageToFilter, filteredImages, filterQueue, miniImage;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        imageToFilter = [UIImage imageNamed:@"img1.jpg"];
+        imageToFilter = [UIImage imageNamed:@"loading-icon.png"];
         filterQueue = [NSOperationQueue new];
         [filterQueue setMaxConcurrentOperationCount:3];
         
+        miniImage = [self imageWithImage:imageToFilter convertToSize:CGSizeMake(60, 60)];
+        
         for (int i=0; i<15; i++) {
-            [self startImageFiltrationForRecord:imageToFilter atIndex:i];
+            [self startImageFiltrationForRecord:miniImage atIndex:i];
         }
         
-        self.contentSize = CGSizeMake(60 * 15, self.frame.size.height);
+        self.contentSize = CGSizeMake(80 * 15, self.frame.size.height);
     }
     
     return self;
-}
-
-- (void) filteringImage
-{
-    NSLog(@"se");
-    [filteredImages addObject:[imageToFilter m02]];
 }
 
 - (void)startImageFiltrationForRecord:(UIImage *)record atIndex:(int)index {
@@ -46,6 +42,14 @@
     UIImageView *awesomeView = [[UIImageView alloc] initWithImage:filtration.image];
     [awesomeView setFrame:CGRectMake(xOrigin, 0, 60, 60)];
     [self addSubview:awesomeView];
+}
+
+- (UIImage *)imageWithImage:(UIImage *)image convertToSize:(CGSize)size {
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return destImage;
 }
 
 @end

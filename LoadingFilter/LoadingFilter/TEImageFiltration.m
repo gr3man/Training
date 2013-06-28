@@ -7,6 +7,13 @@
 //
 
 #import "TEImageFiltration.h"
+#define SuppressPerformSelectorLeakWarning(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
 
 @implementation TEImageFiltration
 
@@ -26,13 +33,25 @@
         if (self.isCancelled)
             return;
         
-        UIImage *tempImage = [self.image m01];
+        SEL filterFunc;
+        if (self.index >= 10) {
+            filterFunc = NSSelectorFromString([NSString stringWithFormat:@"m%d",self.index]);
+        } else {
+            filterFunc = NSSelectorFromString([NSString stringWithFormat:@"m0%d",self.index]);
+        }
         
         if (self.isCancelled)
             return;
+        
+        UIImage *tempImage;
+        SuppressPerformSelectorLeakWarning(tempImage = [self.image performSelector:filterFunc];);
+        
+        if (self.isCancelled)
+            return;
+        
         if(tempImage){
-            [(NSObject *)self.delegate performSelectorOnMainThread:@selector(imageFiltrationDidFinish:) withObject:self waitUntilDone:NO];
             self.image = tempImage;
+            [(NSObject *)self.delegate performSelectorOnMainThread:@selector(imageFiltrationDidFinish:) withObject:self waitUntilDone:NO];
         }
     }
     

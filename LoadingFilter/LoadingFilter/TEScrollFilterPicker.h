@@ -12,14 +12,14 @@
 @interface TEScrollFilterPicker : UIScrollView <ImageFiltrationDelegate>
 {
     UIImage *imageToFilter;
+    UIImage *miniImage;
     NSMutableArray *filteredImages;
     NSOperationQueue *filterQueue;
 }
 
 @property (retain, nonatomic) UIImage *imageToFilter;
+@property (retain, nonatomic) UIImage *miniImage;
 @property (copy, nonatomic) NSMutableArray *filteredImages;
 @property (retain, nonatomic) NSOperationQueue *filterQueue;
-
-- (void) filteringImage;
 
 @end
