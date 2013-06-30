@@ -11,6 +11,7 @@
 #import "TEButtonDisplayFilter.h"
 
 @implementation TEScrollFilterPicker
+int count;
 @synthesize imageToFilter, filteredImages, filterQueue, miniImage, delegateImage, displayImage;
 
 - (id)initWithFrame:(CGRect)frame
@@ -21,8 +22,9 @@
         filterQueue = [NSOperationQueue new];
         [filterQueue setMaxConcurrentOperationCount:3];
         filteredImages = [[NSMutableArray alloc] init];
-        doneLoad = NO;
+        startedFilterRealImg = NO;
         displayIndex = 0;
+        count = 0;
         
         miniImage = [self imageWithImage:imageToFilter convertToSize:CGSizeMake(100, 100)];
         
@@ -35,7 +37,7 @@
             [self startImageFiltrationForImage:miniImage atIndex:i];
         }
         
-        self.contentSize = CGSizeMake(80 * 15, self.frame.size.height);
+        self.contentSize = CGSizeMake(80 * 16, self.frame.size.height);
     }
     
     return self;
@@ -50,33 +52,45 @@
     [filterQueue addOperation:imageFiltration];
 }
 
-- (void) test
+- (void) filterRealImage
 {
     //int imageShow = self.contentOffset.x / 80;
+    startedFilterRealImg = YES;
     for (int i=0; i<16; i++) {
         [self startImageFiltrationForImage:imageToFilter atIndex:i];
     }
 }
 
 - (void)imageFiltrationDidFinish:(TEImageFiltration *)filtration {
-    if (filtration.index == 15 && doneLoad == NO) {
-        [self test];
-        doneLoad = YES;
-    }
     CGFloat xOrigin = filtration.index * 80 + 10;
-    if(doneLoad){
-        [filteredImages replaceObjectAtIndex:filtration.index withObject:@[filtration.image, @"YES"]];
-        NSLog(@"%f  %d", filtration.image.size.width, filtration.index);
-//        if(displayIndex == filtration.index){
-//            [delegateImage didSelectFilteredImage:filteredImages[filtration.index][0]];
+    if (count == 15) {
+        //if (!startedFilterRealImg)
+            [self filterRealImage];
+//        else{
+//            [filteredImages replaceObjectAtIndex:filtration.index withObject:@[filtration.image, @"YES"]];
+//            NSLog(@"%d", filtration.index);
 //        }
     }
-    
+    else if (count > 15){
+        [filteredImages replaceObjectAtIndex:filtration.index withObject:@[filtration.image, @"YES"]];
+        if(displayIndex == filtration.index) {
+            [delegateImage didSelectFilteredImage:filteredImages[filtration.index][0]];
+        }
+        NSLog(@"%d", filtration.index);
+    }
+//    if(doneLoad){
+//        [filteredImages replaceObjectAtIndex:filtration.index withObject:@[filtration.image, @"YES"]];
+//        NSLog(@"%f  %d", filtration.image.size.width, filtration.index);
+////        if(displayIndex == filtration.index){
+////            [delegateImage didSelectFilteredImage:filteredImages[filtration.index][0]];
+////        }
+//    }
+    count++;
     //UIImageView *awesomeView = [[UIImageView alloc] initWithImage:filtration.image];
     TEButtonDisplayFilter *buttonForFilter = [[TEButtonDisplayFilter alloc] initWithFrame:CGRectMake(xOrigin, 0, 60, 60)];
     [buttonForFilter setImage:filtration.image forState:UIControlStateNormal];
     buttonForFilter.index = filtration.index;
-    displayIndex = filtration.index;
+    //displayIndex = filtration.index;
     [buttonForFilter addTarget:self action:@selector(chosenFilterImage:) forControlEvents:UIControlEventTouchUpInside];
     //[awesomeView setFrame:CGRectMake(xOrigin, 0, 60, 60)];
     [self addSubview:buttonForFilter];

@@ -24,7 +24,7 @@
     //BOOL
     NSOperationQueue *filterQueue;
     id <ScrollForFliterDelegate> delegateImage;
-    BOOL doneLoad;
+    BOOL startedFilterRealImg;
     int displayIndex;
 }
 
@@ -37,5 +37,6 @@
 
 - (void)startImageFiltrationForImage:(UIImage *)record atIndex:(int)index;
 - (void)chosenFilterImage:(id)sender;
+- (void)filterRealImage;
 
 @end
