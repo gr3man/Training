@@ -201,6 +201,8 @@
 		C7DAF3B0177BF82B0076E718 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7DAF280177BF82B0076E718 /* License.txt */; };
 		C7DAF3B1177BF82B0076E718 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C7DAF281177BF82B0076E718 /* README.md */; };
 		C7DAF3E9177BFCD30076E718 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DAF3E8177BFCD30076E718 /* SenTestingKit.framework */; };
+		C7E3C01717811F7C00E3A5FB /* cd3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7E3C01617811F7C00E3A5FB /* cd3.jpg */; };
+		C7E3C019178120C700E3A5FB /* img2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7E3C018178120C700E3A5FB /* img2.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -586,6 +588,8 @@
 		C7DAF280177BF82B0076E718 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		C7DAF281177BF82B0076E718 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		C7DAF3E8177BFCD30076E718 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C7E3C01617811F7C00E3A5FB /* cd3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cd3.jpg; sourceTree = "<group>"; };
+		C7E3C018178120C700E3A5FB /* img2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img2.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -666,6 +670,8 @@
 		C7BA3558177BDB7900E505B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C7E3C018178120C700E3A5FB /* img2.jpg */,
+				C7E3C01617811F7C00E3A5FB /* cd3.jpg */,
 				C7C73C21177D29E3007A77F0 /* icon_app.png */,
 				C7A2E5E2177C244300E4A7F2 /* loading-icon.png */,
 				C7BA3559177BDB7900E505B7 /* LoadingFilter-Info.plist */,
@@ -1162,6 +1168,8 @@
 				C7DAF3B1177BF82B0076E718 /* README.md in Resources */,
 				C7A2E5E3177C244300E4A7F2 /* loading-icon.png in Resources */,
 				C7C73C22177D29E3007A77F0 /* icon_app.png in Resources */,
+				C7E3C01717811F7C00E3A5FB /* cd3.jpg in Resources */,
+				C7E3C019178120C700E3A5FB /* img2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
