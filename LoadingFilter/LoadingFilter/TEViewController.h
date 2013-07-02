@@ -12,6 +12,7 @@
 @interface TEViewController : UIViewController <ScrollForFliterDelegate>
 {
     UIImageView *viewShowImage;
+    UIActivityIndicatorView *actiIndicator;
 }
 
 @property (retain, nonatomic) UIImageView *viewShowImage;

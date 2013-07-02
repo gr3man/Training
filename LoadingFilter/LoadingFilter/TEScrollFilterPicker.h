@@ -11,7 +11,7 @@
 
 @protocol ScrollForFliterDelegate <NSObject>
 
-- (void) didSelectFilteredImage : (UIImage *) filteredImage;
+- (void) didSelectFilteredImage : (UIImage *) image toShow : (BOOL) isFilteredImage;
 
 @end
 
@@ -19,8 +19,9 @@
 {
     UIImage *imageToFilter;
     UIImage *miniImage;
-    UIImage *displayImage;
+    UIImageView *displayImage;
     NSMutableArray *filteredImages;
+    //UIView *displayView;
     //BOOL
     NSOperationQueue *filterQueue;
     id <ScrollForFliterDelegate> delegateImage;
@@ -30,7 +31,7 @@
 
 @property (retain, nonatomic) UIImage *imageToFilter;
 @property (retain, nonatomic) UIImage *miniImage;
-@property (retain, nonatomic) UIImage *displayImage;
+@property (retain, nonatomic) UIImageView *displayImage;
 @property (copy, nonatomic) NSMutableArray *filteredImages;
 @property (retain, nonatomic) NSOperationQueue *filterQueue;
 @property (nonatomic, retain) id <ScrollForFliterDelegate> delegateImage;

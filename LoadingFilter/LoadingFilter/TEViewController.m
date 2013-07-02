@@ -24,15 +24,25 @@
     [self.view addSubview:imageList];
     
     UIImage *img = imageList.imageToFilter;
+    actiIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     viewShowImage = [[UIImageView alloc] initWithImage:img];
     [viewShowImage setFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.width)];
     [viewShowImage setContentMode:UIViewContentModeScaleAspectFit];
+    [viewShowImage setBackgroundColor:[UIColor blackColor]];
+    actiIndicator.center = viewShowImage.center;
+    actiIndicator.frame = CGRectMake(viewShowImage.frame.size.width / 2 - 20.0, viewShowImage.frame.size.height / 2 - 20.0, 40.0, 40.0);
+    [viewShowImage addSubview:actiIndicator];
     [self.view addSubview:viewShowImage];
 }
 
-- (void)didSelectFilteredImage:(UIImage *)filteredImage
+- (void)didSelectFilteredImage:(UIImage *)image toShow:(BOOL)isFilteredImage
 {
-    [viewShowImage setImage:filteredImage];
+    if(!isFilteredImage){
+        [actiIndicator startAnimating];
+    } else {
+        [actiIndicator stopAnimating];
+    }
+    [viewShowImage setImage:image];
 }
 
 - (void)didReceiveMemoryWarning

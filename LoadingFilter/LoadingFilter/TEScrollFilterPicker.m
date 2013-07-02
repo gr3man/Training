@@ -19,13 +19,16 @@ int count;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        imageToFilter = [UIImage imageNamed:@"img2.jpg"];
+        imageToFilter = [UIImage imageNamed:@"img1.jpg"];
         filterQueue = [NSOperationQueue new];
         [filterQueue setMaxConcurrentOperationCount:3];
         filteredImages = [[NSMutableArray alloc] init];
         startedFilterRealImg = NO;
         displayIndex = 0;
         count = 0;
+        
+        displayImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.width)];
+        [displayImage setContentMode:UIViewContentModeScaleAspectFit];
 
         if (imageToFilter.size.height > imageToFilter.size.width) {
             miniImage = [self imageWithImage:imageToFilter convertToSize:CGSizeMake(kSizeOfMiniImg * imageToFilter.size.width/imageToFilter.size.height, kSizeOfMiniImg)];
@@ -35,7 +38,7 @@ int count;
        //miniImage = [self imageWithImage:imageToFilter convertToSize:CGSizeMake(60, 100)];
         
         for (int i=0; i<16; i++) {
-            UIImage *tempImg = [UIImage imageNamed:@"loading-icon.png"];
+            UIImage *tempImg = [[UIImage alloc] init];
             [filteredImages addObject:@[tempImg, @"NO"]];
         }
         
@@ -69,7 +72,6 @@ int count;
 
 - (void)imageFiltrationDidFinish:(TEImageFiltration *)filtration {
     CGFloat xOrigin = filtration.index * (kSizeOfMiniImg + 10) + 10;
-    NSLog(@"%d", filtration.index);
     //if (count == 15) {
         //if (!startedFilterRealImg)
             //[self filterRealImage];
@@ -81,9 +83,10 @@ int count;
     if (count > 15){
         [filteredImages replaceObjectAtIndex:filtration.index withObject:@[filtration.image, @"YES"]];
         if(displayIndex == filtration.index) {
-            [delegateImage didSelectFilteredImage:filteredImages[filtration.index][0]];
+            //[displayImage setImage:filteredImages[sender.index][0]];
+            //[delegateImage didSelectFilteredImage:displayImage];
+            [delegateImage didSelectFilteredImage:filteredImages[filtration.index][0] toShow:YES];
         }
-        NSLog(@"%d", filtration.index);
     }
     else {
         UIImageView *awesomeView = [[UIImageView alloc] initWithImage:filtration.image];
@@ -120,11 +123,20 @@ int count;
 
 - (void)chosenFilterImage : (TEButtonDisplayFilter *)sender;
 {
+    BOOL test = YES;
     if ([(NSString *)filteredImages[sender.index][1] isEqualToString:@"NO"])
     {
+//        UIActivityIndicatorView *actiIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+//        actiIndicator.center = displayImage.center;
+//        actiIndicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+//        [actiIndicator startAnimating];
+//        [displayImage addSubview:actiIndicator];
+        test = NO;
         [self startImageFiltrationForImage:imageToFilter atIndex:sender.index];
     }
-    [delegateImage didSelectFilteredImage:filteredImages[sender.index][0]];
+    
+    //[displayImage setImage:filteredImages[sender.index][0]];
+    [delegateImage didSelectFilteredImage:filteredImages[sender.index][0] toShow:test];
     displayIndex = sender.index;
 }
 
