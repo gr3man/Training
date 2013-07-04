@@ -20,13 +20,17 @@
 		C7C36DC71783E51100E31FE7 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C36DC31783E51100E31FE7 /* IIViewDeckController.m */; };
 		C7C36DC81783E51100E31FE7 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C36DC51783E51100E31FE7 /* IIWrapController.m */; };
 		C7C36DD31783F74900E31FE7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C36DD21783F74900E31FE7 /* QuartzCore.framework */; };
-		C7C36DEB1783FF6C00E31FE7 /* TETest.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C36DEA1783FF6C00E31FE7 /* TETest.m */; };
 		C7C36DEF1784011A00E31FE7 /* TERootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C36DED1784011A00E31FE7 /* TERootViewController.m */; };
 		C7C36DF01784011A00E31FE7 /* TERootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C36DEE1784011A00E31FE7 /* TERootViewController.xib */; };
-		C7C36DF41784018100E31FE7 /* TELeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C36DF21784018100E31FE7 /* TELeftViewController.m */; };
-		C7C36DF51784018100E31FE7 /* TELeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C36DF31784018100E31FE7 /* TELeftViewController.xib */; };
 		C7C36DF9178401A800E31FE7 /* TERightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C36DF7178401A800E31FE7 /* TERightViewController.m */; };
 		C7C36DFA178401A800E31FE7 /* TERightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C36DF8178401A800E31FE7 /* TERightViewController.xib */; };
+		C7D13D9317851F1300589B7A /* five.png in Resources */ = {isa = PBXBuildFile; fileRef = C7D13D8E17851F1300589B7A /* five.png */; };
+		C7D13D9417851F1300589B7A /* four.png in Resources */ = {isa = PBXBuildFile; fileRef = C7D13D8F17851F1300589B7A /* four.png */; };
+		C7D13D9517851F1300589B7A /* one.png in Resources */ = {isa = PBXBuildFile; fileRef = C7D13D9017851F1300589B7A /* one.png */; };
+		C7D13D9617851F1300589B7A /* three.png in Resources */ = {isa = PBXBuildFile; fileRef = C7D13D9117851F1300589B7A /* three.png */; };
+		C7D13D9717851F1300589B7A /* two.png in Resources */ = {isa = PBXBuildFile; fileRef = C7D13D9217851F1300589B7A /* two.png */; };
+		C7E14F121785275F009263CD /* TELeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E14F101785275F009263CD /* TELeftViewController.m */; };
+		C7E14F131785275F009263CD /* TELeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7E14F111785275F009263CD /* TELeftViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,17 +54,20 @@
 		C7C36DC41783E51100E31FE7 /* IIWrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIWrapController.h; sourceTree = "<group>"; };
 		C7C36DC51783E51100E31FE7 /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIWrapController.m; sourceTree = "<group>"; };
 		C7C36DD21783F74900E31FE7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		C7C36DE91783FF6C00E31FE7 /* TETest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TETest.h; sourceTree = "<group>"; };
-		C7C36DEA1783FF6C00E31FE7 /* TETest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TETest.m; sourceTree = "<group>"; };
 		C7C36DEC1784011A00E31FE7 /* TERootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TERootViewController.h; sourceTree = "<group>"; };
 		C7C36DED1784011A00E31FE7 /* TERootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TERootViewController.m; sourceTree = "<group>"; };
 		C7C36DEE1784011A00E31FE7 /* TERootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TERootViewController.xib; sourceTree = "<group>"; };
-		C7C36DF11784018000E31FE7 /* TELeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TELeftViewController.h; sourceTree = "<group>"; };
-		C7C36DF21784018100E31FE7 /* TELeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TELeftViewController.m; sourceTree = "<group>"; };
-		C7C36DF31784018100E31FE7 /* TELeftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TELeftViewController.xib; sourceTree = "<group>"; };
 		C7C36DF6178401A800E31FE7 /* TERightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TERightViewController.h; sourceTree = "<group>"; };
 		C7C36DF7178401A800E31FE7 /* TERightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TERightViewController.m; sourceTree = "<group>"; };
 		C7C36DF8178401A800E31FE7 /* TERightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TERightViewController.xib; sourceTree = "<group>"; };
+		C7D13D8E17851F1300589B7A /* five.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = five.png; sourceTree = "<group>"; };
+		C7D13D8F17851F1300589B7A /* four.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four.png; sourceTree = "<group>"; };
+		C7D13D9017851F1300589B7A /* one.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = one.png; sourceTree = "<group>"; };
+		C7D13D9117851F1300589B7A /* three.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = three.png; sourceTree = "<group>"; };
+		C7D13D9217851F1300589B7A /* two.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = two.png; sourceTree = "<group>"; };
+		C7E14F0F1785275F009263CD /* TELeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TELeftViewController.h; sourceTree = "<group>"; };
+		C7E14F101785275F009263CD /* TELeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TELeftViewController.m; sourceTree = "<group>"; };
+		C7E14F111785275F009263CD /* TELeftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TELeftViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,11 +123,9 @@
 				C7C36DEC1784011A00E31FE7 /* TERootViewController.h */,
 				C7C36DED1784011A00E31FE7 /* TERootViewController.m */,
 				C7C36DEE1784011A00E31FE7 /* TERootViewController.xib */,
-				C7C36DE91783FF6C00E31FE7 /* TETest.h */,
-				C7C36DEA1783FF6C00E31FE7 /* TETest.m */,
-				C7C36DF11784018000E31FE7 /* TELeftViewController.h */,
-				C7C36DF21784018100E31FE7 /* TELeftViewController.m */,
-				C7C36DF31784018100E31FE7 /* TELeftViewController.xib */,
+				C7E14F0F1785275F009263CD /* TELeftViewController.h */,
+				C7E14F101785275F009263CD /* TELeftViewController.m */,
+				C7E14F111785275F009263CD /* TELeftViewController.xib */,
 				C7C36DF6178401A800E31FE7 /* TERightViewController.h */,
 				C7C36DF7178401A800E31FE7 /* TERightViewController.m */,
 				C7C36DF8178401A800E31FE7 /* TERightViewController.xib */,
@@ -131,6 +136,11 @@
 		C7C36DA61783E1E600E31FE7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C7D13D8E17851F1300589B7A /* five.png */,
+				C7D13D8F17851F1300589B7A /* four.png */,
+				C7D13D9017851F1300589B7A /* one.png */,
+				C7D13D9117851F1300589B7A /* three.png */,
+				C7D13D9217851F1300589B7A /* two.png */,
 				C7C36DA71783E1E600E31FE7 /* DemoViewDeck-Info.plist */,
 				C7C36DA81783E1E600E31FE7 /* InfoPlist.strings */,
 				C7C36DAB1783E1E600E31FE7 /* main.m */,
@@ -212,8 +222,13 @@
 				C7C36DB41783E1E600E31FE7 /* Default@2x.png in Resources */,
 				C7C36DB61783E1E600E31FE7 /* Default-568h@2x.png in Resources */,
 				C7C36DF01784011A00E31FE7 /* TERootViewController.xib in Resources */,
-				C7C36DF51784018100E31FE7 /* TELeftViewController.xib in Resources */,
 				C7C36DFA178401A800E31FE7 /* TERightViewController.xib in Resources */,
+				C7D13D9317851F1300589B7A /* five.png in Resources */,
+				C7D13D9417851F1300589B7A /* four.png in Resources */,
+				C7D13D9517851F1300589B7A /* one.png in Resources */,
+				C7D13D9617851F1300589B7A /* three.png in Resources */,
+				C7D13D9717851F1300589B7A /* two.png in Resources */,
+				C7E14F131785275F009263CD /* TELeftViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,10 +244,9 @@
 				C7C36DC61783E51100E31FE7 /* IISideController.m in Sources */,
 				C7C36DC71783E51100E31FE7 /* IIViewDeckController.m in Sources */,
 				C7C36DC81783E51100E31FE7 /* IIWrapController.m in Sources */,
-				C7C36DEB1783FF6C00E31FE7 /* TETest.m in Sources */,
 				C7C36DEF1784011A00E31FE7 /* TERootViewController.m in Sources */,
-				C7C36DF41784018100E31FE7 /* TELeftViewController.m in Sources */,
 				C7C36DF9178401A800E31FE7 /* TERightViewController.m in Sources */,
+				C7E14F121785275F009263CD /* TELeftViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +328,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DemoViewDeck/DemoViewDeck-Prefix.pch";
 				INFOPLIST_FILE = "DemoViewDeck/DemoViewDeck-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -325,6 +340,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DemoViewDeck/DemoViewDeck-Prefix.pch";
 				INFOPLIST_FILE = "DemoViewDeck/DemoViewDeck-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

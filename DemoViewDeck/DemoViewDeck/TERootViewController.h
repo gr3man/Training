@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "IIViewDeckController.h"
+#import "TELeftViewController.h"
+#import "TERightViewController.h"
 
-@interface TERootViewController : UITableViewController<IIViewDeckControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface TERootViewController : UITableViewController<IIViewDeckControllerDelegate, MenuDelegate>
+{
+    TELeftViewController* leftController;
+    TERightViewController* rightController;
+}
 
 @end

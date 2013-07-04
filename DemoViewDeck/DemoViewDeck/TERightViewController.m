@@ -7,6 +7,7 @@
 //
 
 #import "TERightViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface TERightViewController ()
 
@@ -27,6 +28,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.labelDetail.layer.borderWidth = 1.5;
+    self.labelDetail.layer.borderColor = [UIColor blackColor].CGColor;
 }
 
 - (void)didReceiveMemoryWarning

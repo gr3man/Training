@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TERightViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UILabel *labelDetail;
 
 @end

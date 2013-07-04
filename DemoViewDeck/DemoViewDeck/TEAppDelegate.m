@@ -26,18 +26,12 @@
 }
 
 - (IIViewDeckController*)generateControllerStack {
-    TELeftViewController* leftController = [[TELeftViewController alloc] initWithNibName:@"TELeftViewController" bundle:nil];
-    TERightViewController* rightController = [[TERightViewController alloc] initWithNibName:@"TERightViewController" bundle:nil];
     
     //UIViewController *centerController = [[TERootViewController alloc] initWithNibName:@"TERootViewController" bundle:nil];
     UIViewController *centerController = [[TERootViewController alloc] init];
     centerController = [[UINavigationController alloc] initWithRootViewController:centerController];
     IIViewDeckController* deckController =  [[IIViewDeckController alloc]
-                                             initWithCenterViewController:centerController
-                                             leftViewController:leftController
-                                             rightViewController:rightController];
-    deckController.rightSize = 400;
-    deckController.leftSize = 400;
+                                             initWithCenterViewController:centerController];
     deckController.panningMode = IIViewDeckNavigationBarOrOpenCenterPanning;
     deckController.navigationControllerBehavior = IIViewDeckNavigationControllerContained;
     deckController.centerhiddenInteractivity = IIViewDeckCenterHiddenNotUserInteractiveWithTapToClose;
