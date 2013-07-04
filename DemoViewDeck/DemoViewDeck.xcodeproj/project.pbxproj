@@ -1,0 +1,357 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C7C36DA01783E1E600E31FE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C36D9F1783E1E600E31FE7 /* UIKit.framework */; };
+		C7C36DA21783E1E600E31FE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C36DA11783E1E600E31FE7 /* Foundation.framework */; };
+		C7C36DA41783E1E600E31FE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C36DA31783E1E600E31FE7 /* CoreGraphics.framework */; };
+		C7C36DAA1783E1E600E31FE7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7C36DA81783E1E600E31FE7 /* InfoPlist.strings */; };
+		C7C36DAC1783E1E600E31FE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C36DAB1783E1E600E31FE7 /* main.m */; };
+		C7C36DB01783E1E600E31FE7 /* TEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C36DAF1783E1E600E31FE7 /* TEAppDelegate.m */; };
+		C7C36DB21783E1E600E31FE7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C36DB11783E1E600E31FE7 /* Default.png */; };
+		C7C36DB41783E1E600E31FE7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C36DB31783E1E600E31FE7 /* Default@2x.png */; };
+		C7C36DB61783E1E600E31FE7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C36DB51783E1E600E31FE7 /* Default-568h@2x.png */; };
+		C7C36DC61783E51100E31FE7 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C36DC11783E51100E31FE7 /* IISideController.m */; };
+		C7C36DC71783E51100E31FE7 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C36DC31783E51100E31FE7 /* IIViewDeckController.m */; };
+		C7C36DC81783E51100E31FE7 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C36DC51783E51100E31FE7 /* IIWrapController.m */; };
+		C7C36DD31783F74900E31FE7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C36DD21783F74900E31FE7 /* QuartzCore.framework */; };
+		C7C36DEB1783FF6C00E31FE7 /* TETest.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C36DEA1783FF6C00E31FE7 /* TETest.m */; };
+		C7C36DEF1784011A00E31FE7 /* TERootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C36DED1784011A00E31FE7 /* TERootViewController.m */; };
+		C7C36DF01784011A00E31FE7 /* TERootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C36DEE1784011A00E31FE7 /* TERootViewController.xib */; };
+		C7C36DF41784018100E31FE7 /* TELeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C36DF21784018100E31FE7 /* TELeftViewController.m */; };
+		C7C36DF51784018100E31FE7 /* TELeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C36DF31784018100E31FE7 /* TELeftViewController.xib */; };
+		C7C36DF9178401A800E31FE7 /* TERightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C36DF7178401A800E31FE7 /* TERightViewController.m */; };
+		C7C36DFA178401A800E31FE7 /* TERightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C36DF8178401A800E31FE7 /* TERightViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C7C36D9C1783E1E600E31FE7 /* DemoViewDeck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoViewDeck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7C36D9F1783E1E600E31FE7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C7C36DA11783E1E600E31FE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C7C36DA31783E1E600E31FE7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C7C36DA71783E1E600E31FE7 /* DemoViewDeck-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DemoViewDeck-Info.plist"; sourceTree = "<group>"; };
+		C7C36DA91783E1E600E31FE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C7C36DAB1783E1E600E31FE7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C7C36DAD1783E1E600E31FE7 /* DemoViewDeck-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoViewDeck-Prefix.pch"; sourceTree = "<group>"; };
+		C7C36DAE1783E1E600E31FE7 /* TEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TEAppDelegate.h; sourceTree = "<group>"; };
+		C7C36DAF1783E1E600E31FE7 /* TEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TEAppDelegate.m; sourceTree = "<group>"; };
+		C7C36DB11783E1E600E31FE7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		C7C36DB31783E1E600E31FE7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		C7C36DB51783E1E600E31FE7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C7C36DC01783E51100E31FE7 /* IISideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IISideController.h; sourceTree = "<group>"; };
+		C7C36DC11783E51100E31FE7 /* IISideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISideController.m; sourceTree = "<group>"; };
+		C7C36DC21783E51100E31FE7 /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewDeckController.h; sourceTree = "<group>"; };
+		C7C36DC31783E51100E31FE7 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
+		C7C36DC41783E51100E31FE7 /* IIWrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIWrapController.h; sourceTree = "<group>"; };
+		C7C36DC51783E51100E31FE7 /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIWrapController.m; sourceTree = "<group>"; };
+		C7C36DD21783F74900E31FE7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C7C36DE91783FF6C00E31FE7 /* TETest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TETest.h; sourceTree = "<group>"; };
+		C7C36DEA1783FF6C00E31FE7 /* TETest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TETest.m; sourceTree = "<group>"; };
+		C7C36DEC1784011A00E31FE7 /* TERootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TERootViewController.h; sourceTree = "<group>"; };
+		C7C36DED1784011A00E31FE7 /* TERootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TERootViewController.m; sourceTree = "<group>"; };
+		C7C36DEE1784011A00E31FE7 /* TERootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TERootViewController.xib; sourceTree = "<group>"; };
+		C7C36DF11784018000E31FE7 /* TELeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TELeftViewController.h; sourceTree = "<group>"; };
+		C7C36DF21784018100E31FE7 /* TELeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TELeftViewController.m; sourceTree = "<group>"; };
+		C7C36DF31784018100E31FE7 /* TELeftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TELeftViewController.xib; sourceTree = "<group>"; };
+		C7C36DF6178401A800E31FE7 /* TERightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TERightViewController.h; sourceTree = "<group>"; };
+		C7C36DF7178401A800E31FE7 /* TERightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TERightViewController.m; sourceTree = "<group>"; };
+		C7C36DF8178401A800E31FE7 /* TERightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TERightViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C7C36D991783E1E600E31FE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7C36DD31783F74900E31FE7 /* QuartzCore.framework in Frameworks */,
+				C7C36DA01783E1E600E31FE7 /* UIKit.framework in Frameworks */,
+				C7C36DA21783E1E600E31FE7 /* Foundation.framework in Frameworks */,
+				C7C36DA41783E1E600E31FE7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C7C36D931783E1E500E31FE7 = {
+			isa = PBXGroup;
+			children = (
+				C7C36DA51783E1E600E31FE7 /* DemoViewDeck */,
+				C7C36D9E1783E1E600E31FE7 /* Frameworks */,
+				C7C36D9D1783E1E600E31FE7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C7C36D9D1783E1E600E31FE7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7C36D9C1783E1E600E31FE7 /* DemoViewDeck.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C7C36D9E1783E1E600E31FE7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7C36DD21783F74900E31FE7 /* QuartzCore.framework */,
+				C7C36D9F1783E1E600E31FE7 /* UIKit.framework */,
+				C7C36DA11783E1E600E31FE7 /* Foundation.framework */,
+				C7C36DA31783E1E600E31FE7 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7C36DA51783E1E600E31FE7 /* DemoViewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				C7C36DBF1783E51100E31FE7 /* ViewDeck */,
+				C7C36DAE1783E1E600E31FE7 /* TEAppDelegate.h */,
+				C7C36DAF1783E1E600E31FE7 /* TEAppDelegate.m */,
+				C7C36DA61783E1E600E31FE7 /* Supporting Files */,
+				C7C36DEC1784011A00E31FE7 /* TERootViewController.h */,
+				C7C36DED1784011A00E31FE7 /* TERootViewController.m */,
+				C7C36DEE1784011A00E31FE7 /* TERootViewController.xib */,
+				C7C36DE91783FF6C00E31FE7 /* TETest.h */,
+				C7C36DEA1783FF6C00E31FE7 /* TETest.m */,
+				C7C36DF11784018000E31FE7 /* TELeftViewController.h */,
+				C7C36DF21784018100E31FE7 /* TELeftViewController.m */,
+				C7C36DF31784018100E31FE7 /* TELeftViewController.xib */,
+				C7C36DF6178401A800E31FE7 /* TERightViewController.h */,
+				C7C36DF7178401A800E31FE7 /* TERightViewController.m */,
+				C7C36DF8178401A800E31FE7 /* TERightViewController.xib */,
+			);
+			path = DemoViewDeck;
+			sourceTree = "<group>";
+		};
+		C7C36DA61783E1E600E31FE7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C7C36DA71783E1E600E31FE7 /* DemoViewDeck-Info.plist */,
+				C7C36DA81783E1E600E31FE7 /* InfoPlist.strings */,
+				C7C36DAB1783E1E600E31FE7 /* main.m */,
+				C7C36DAD1783E1E600E31FE7 /* DemoViewDeck-Prefix.pch */,
+				C7C36DB11783E1E600E31FE7 /* Default.png */,
+				C7C36DB31783E1E600E31FE7 /* Default@2x.png */,
+				C7C36DB51783E1E600E31FE7 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C7C36DBF1783E51100E31FE7 /* ViewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				C7C36DC01783E51100E31FE7 /* IISideController.h */,
+				C7C36DC11783E51100E31FE7 /* IISideController.m */,
+				C7C36DC21783E51100E31FE7 /* IIViewDeckController.h */,
+				C7C36DC31783E51100E31FE7 /* IIViewDeckController.m */,
+				C7C36DC41783E51100E31FE7 /* IIWrapController.h */,
+				C7C36DC51783E51100E31FE7 /* IIWrapController.m */,
+			);
+			path = ViewDeck;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C7C36D9B1783E1E600E31FE7 /* DemoViewDeck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7C36DB91783E1E600E31FE7 /* Build configuration list for PBXNativeTarget "DemoViewDeck" */;
+			buildPhases = (
+				C7C36D981783E1E600E31FE7 /* Sources */,
+				C7C36D991783E1E600E31FE7 /* Frameworks */,
+				C7C36D9A1783E1E600E31FE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DemoViewDeck;
+			productName = DemoViewDeck;
+			productReference = C7C36D9C1783E1E600E31FE7 /* DemoViewDeck.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C7C36D941783E1E500E31FE7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TE;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Tuấn Nguyễn Anh";
+			};
+			buildConfigurationList = C7C36D971783E1E500E31FE7 /* Build configuration list for PBXProject "DemoViewDeck" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C7C36D931783E1E500E31FE7;
+			productRefGroup = C7C36D9D1783E1E600E31FE7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C7C36D9B1783E1E600E31FE7 /* DemoViewDeck */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C7C36D9A1783E1E600E31FE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7C36DAA1783E1E600E31FE7 /* InfoPlist.strings in Resources */,
+				C7C36DB21783E1E600E31FE7 /* Default.png in Resources */,
+				C7C36DB41783E1E600E31FE7 /* Default@2x.png in Resources */,
+				C7C36DB61783E1E600E31FE7 /* Default-568h@2x.png in Resources */,
+				C7C36DF01784011A00E31FE7 /* TERootViewController.xib in Resources */,
+				C7C36DF51784018100E31FE7 /* TELeftViewController.xib in Resources */,
+				C7C36DFA178401A800E31FE7 /* TERightViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C7C36D981783E1E600E31FE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7C36DAC1783E1E600E31FE7 /* main.m in Sources */,
+				C7C36DB01783E1E600E31FE7 /* TEAppDelegate.m in Sources */,
+				C7C36DC61783E51100E31FE7 /* IISideController.m in Sources */,
+				C7C36DC71783E51100E31FE7 /* IIViewDeckController.m in Sources */,
+				C7C36DC81783E51100E31FE7 /* IIWrapController.m in Sources */,
+				C7C36DEB1783FF6C00E31FE7 /* TETest.m in Sources */,
+				C7C36DEF1784011A00E31FE7 /* TERootViewController.m in Sources */,
+				C7C36DF41784018100E31FE7 /* TELeftViewController.m in Sources */,
+				C7C36DF9178401A800E31FE7 /* TERightViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C7C36DA81783E1E600E31FE7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7C36DA91783E1E600E31FE7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C7C36DB71783E1E600E31FE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		C7C36DB81783E1E600E31FE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C7C36DBA1783E1E600E31FE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DemoViewDeck/DemoViewDeck-Prefix.pch";
+				INFOPLIST_FILE = "DemoViewDeck/DemoViewDeck-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C7C36DBB1783E1E600E31FE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DemoViewDeck/DemoViewDeck-Prefix.pch";
+				INFOPLIST_FILE = "DemoViewDeck/DemoViewDeck-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C7C36D971783E1E500E31FE7 /* Build configuration list for PBXProject "DemoViewDeck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7C36DB71783E1E600E31FE7 /* Debug */,
+				C7C36DB81783E1E600E31FE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7C36DB91783E1E600E31FE7 /* Build configuration list for PBXNativeTarget "DemoViewDeck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7C36DBA1783E1E600E31FE7 /* Debug */,
+				C7C36DBB1783E1E600E31FE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C7C36D941783E1E500E31FE7 /* Project object */;
+}
