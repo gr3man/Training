@@ -12,6 +12,7 @@
 
 @end
 
+BOOL haveRightMenu;
 @implementation TERootViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -35,6 +36,7 @@
     leftController = [[TELeftViewController alloc] init];
     rightController = [[TERightViewController alloc] init];
     leftController.menuDelegate = self;
+    self.viewDeckController.delegate = self;
     
     self.viewDeckController.leftController = leftController;
     self.viewDeckController.rightController = rightController;
@@ -149,18 +151,39 @@
 
 - (void) viewDeckController:(IIViewDeckController *)viewDeckController didCloseViewSide:(IIViewDeckSide)viewDeckSide animated:(BOOL)animated
 {
+    if (haveRightMenu) {
+        self.viewDeckController.rightController = rightController;
+    } else {
+        self.viewDeckController.rightController = nil;
+    }
 }
 
-#pragma mark - Menu delegaet
+#pragma mark - Menu delegate
 - (void) didSelectMenu:(NSString *)menuName
 {
+    self.navigationItem.title = menuName;
     if ([menuName isEqualToString:@"menu 2"] || [menuName isEqualToString:@"menu 4"]) {
-        self.viewDeckController.rightController = nil;
+        self.navigationItem.rightBarButtonItem = nil;
+        [self.viewDeckController closeOpenView];
+        haveRightMenu = NO;
     } else {
-        //TERightViewController *right = (TERightViewController *)self.viewDeckController.rightController;
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleRightView)];
+        [self.viewDeckController closeOpenView];
+        haveRightMenu = YES;
         rightController.labelDetail.text = [NSString stringWithFormat:@"This is details for %@", menuName];
-        self.viewDeckController.rightController = rightController;
     }
+}
+
+- (void) hideRightMenu
+{
+    self.navigationItem.rightBarButtonItem = nil;
+    self.viewDeckController.rightController = nil;
+}
+
+- (void) showRightMenu
+{
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleRightView)];
+    self.viewDeckController.rightController = rightController;
 }
 
 - (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation

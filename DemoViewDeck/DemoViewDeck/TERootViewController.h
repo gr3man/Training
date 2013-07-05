@@ -17,4 +17,6 @@
     TERightViewController* rightController;
 }
 
+- (void) hideRightMenu;
+
 @end

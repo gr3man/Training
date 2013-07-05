@@ -43,7 +43,6 @@ NSString *tempText;
 
 - (void) viewDidDisappear:(BOOL)animated
 {
-    [menuDelegate didSelectMenu:tempText];
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
 }
 
@@ -90,8 +89,8 @@ NSString *tempText;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.viewDeckController closeOpenView];
     tempText = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    [menuDelegate didSelectMenu:tempText];
 }
 
 @end
