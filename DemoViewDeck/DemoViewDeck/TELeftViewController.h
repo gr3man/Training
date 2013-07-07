@@ -19,9 +19,10 @@
 {
     id<MenuDelegate> menuDelegate;
     NSArray *number;
+    NSArray *menus;
 }
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-
+@property (copy, nonatomic) NSArray *menus;
 @property (strong, nonatomic) id<MenuDelegate> menuDelegate;
 
 

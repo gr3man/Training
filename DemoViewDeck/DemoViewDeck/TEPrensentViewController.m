@@ -1,20 +1,18 @@
 //
-//  TERightViewController.m
+//  TEPrensentViewController.m
 //  DemoViewDeck
 //
-//  Created by Tuấn Nguyễn Anh on 7/3/13.
+//  Created by Tuan Nguyen Anh on 7/7/13.
 //  Copyright (c) 2013 Tuấn Nguyễn Anh. All rights reserved.
 //
 
-#import "TERightViewController.h"
-#import <QuartzCore/QuartzCore.h>
-#import "IIViewDeckController.h"
+#import "TEPrensentViewController.h"
 
-@interface TERightViewController ()
+@interface TEPrensentViewController ()
 
 @end
 
-@implementation TERightViewController
+@implementation TEPrensentViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,10 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleLeftView)];
     // Do any additional setup after loading the view from its nib.
-    self.labelDetail.layer.borderWidth = 1.5;
-    self.labelDetail.layer.borderColor = [UIColor blackColor].CGColor;
 }
 
 - (void)didReceiveMemoryWarning

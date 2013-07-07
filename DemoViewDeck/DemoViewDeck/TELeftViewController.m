@@ -7,6 +7,9 @@
 //
 
 #import "TELeftViewController.h"
+#import "TEDisclosureViewController.h"
+#import "TECheckListViewController.h"
+#import "TEPrensentViewController.h"
 
 @interface TELeftViewController ()
 
@@ -14,7 +17,7 @@
 
 NSString *tempText;
 @implementation TELeftViewController
-@synthesize menuDelegate;
+@synthesize menuDelegate, menus;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,6 +42,10 @@ NSString *tempText;
     self.tableView.backgroundView = nil;
     [self.view setBackgroundColor:self.tableView.backgroundColor];
     number = @[@"one",@"two",@"three",@"four",@"five"];
+    
+    menus = @[[[TEDisclosureViewController alloc] init],
+              [[TECheckListViewController alloc] init],
+              [[TEPrensentViewController alloc] init]];
 }
 
 - (void) viewDidDisappear:(BOOL)animated
@@ -90,6 +97,13 @@ NSString *tempText;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     tempText = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    //self.viewDeckController.centerController = menus[indexPath.row];
+    [self.viewDeckController closeOpenView];
+    [self.viewDeckController.centerController.navigationController pushViewController:menus[indexPath.row] animated:YES];
+    
+    UIViewController* tempController = menus[indexPath.row];
+    tempController = [[UINavigationController alloc] initWithRootViewController:tempController];
+    self.viewDeckController.centerController = tempController;
     [menuDelegate didSelectMenu:tempText];
 }
 

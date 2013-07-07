@@ -1,17 +1,16 @@
 //
 //  TEAppDelegate.m
-//  DemoViewDeck
+//  ViewDeckMenuTest
 //
-//  Created by Tuấn Nguyễn Anh on 7/3/13.
-//  Copyright (c) 2013 Tuấn Nguyễn Anh. All rights reserved.
+//  Created by Tuan Nguyen Anh on 7/3/13.
+//  Copyright (c) 2013 Tuan Nguyen Anh. All rights reserved.
 //
 
 #import "TEAppDelegate.h"
+#import "IIViewDeckController.h"
 #import "TELeftViewController.h"
 #import "TERightViewController.h"
 #import "TERootViewController.h"
-#import "TECenterViewController.h"
-#import "IIViewDeckController.h"
 
 @implementation TEAppDelegate
 
@@ -19,7 +18,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
     IIViewDeckController* deckController = [self generateControllerStack];
+    
     self.window.rootViewController = deckController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -27,18 +28,19 @@
 }
 
 - (IIViewDeckController*)generateControllerStack {
+    TELeftViewController *leftController = [[TELeftViewController alloc] initWithNibName:@"TELeftViewController" bundle:nil];
+    TERightViewController* rightController = [[TERightViewController alloc] initWithNibName:@"TERightViewController" bundle:nil];
     
-    //UIViewController *centerController = [[TERootViewController alloc] initWithNibName:@"TERootViewController" bundle:nil];
-    UIViewController *centerController = [[TECenterViewController alloc] init];
-    UIViewController *rightController = [[TERightViewController alloc] init];
-    UIViewController *leftController = [[TELeftViewController alloc] init];
+    UIViewController *centerController = [[TERootViewController alloc] initWithNibName:@"TERootViewController" bundle:nil];
     centerController = [[UINavigationController alloc] initWithRootViewController:centerController];
-    IIViewDeckController* deckController =  [[IIViewDeckController alloc]
-                                             initWithCenterViewController:centerController leftViewController:leftController rightViewController:rightController];
+    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centerController
+                                                                                    leftViewController:leftController
+                                                                                   rightViewController:rightController];
+    deckController.rightSize = 400;
+    deckController.leftSize = 400;
     deckController.panningMode = IIViewDeckNavigationBarOrOpenCenterPanning;
-    deckController.navigationControllerBehavior = IIViewDeckNavigationControllerContained;
     deckController.centerhiddenInteractivity = IIViewDeckCenterHiddenNotUserInteractiveWithTapToClose;
-    //[deckController disablePanOverViewsOfClass:NSClassFromString(@"_UITableViewHeaderFooterContentView")];
+    
     return deckController;
 }
 

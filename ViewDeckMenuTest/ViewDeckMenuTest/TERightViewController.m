@@ -1,14 +1,12 @@
 //
 //  TERightViewController.m
-//  DemoViewDeck
+//  ViewDeckMenuTest
 //
-//  Created by Tuấn Nguyễn Anh on 7/3/13.
-//  Copyright (c) 2013 Tuấn Nguyễn Anh. All rights reserved.
+//  Created by Tuan Nguyen Anh on 7/3/13.
+//  Copyright (c) 2013 Tuan Nguyen Anh. All rights reserved.
 //
 
 #import "TERightViewController.h"
-#import <QuartzCore/QuartzCore.h>
-#import "IIViewDeckController.h"
 
 @interface TERightViewController ()
 
@@ -28,10 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleLeftView)];
     // Do any additional setup after loading the view from its nib.
-    self.labelDetail.layer.borderWidth = 1.5;
-    self.labelDetail.layer.borderColor = [UIColor blackColor].CGColor;
 }
 
 - (void)didReceiveMemoryWarning

@@ -32,7 +32,7 @@ BOOL haveRightMenu;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    haveRightMenu = YES;
     leftController = [[TELeftViewController alloc] init];
     rightController = [[TERightViewController alloc] init];
     leftController.menuDelegate = self;
