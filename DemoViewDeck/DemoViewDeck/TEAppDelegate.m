@@ -10,7 +10,7 @@
 #import "TELeftViewController.h"
 #import "TERightViewController.h"
 #import "TERootViewController.h"
-#import "TECenterViewController.h"
+#import "TEDisclosureViewController.h"
 #import "IIViewDeckController.h"
 
 @implementation TEAppDelegate
@@ -29,15 +29,17 @@
 - (IIViewDeckController*)generateControllerStack {
     
     //UIViewController *centerController = [[TERootViewController alloc] initWithNibName:@"TERootViewController" bundle:nil];
-    UIViewController *centerController = [[TECenterViewController alloc] init];
+    UIViewController *centerController = [[TEDisclosureViewController alloc] init];
     UIViewController *rightController = [[TERightViewController alloc] init];
     UIViewController *leftController = [[TELeftViewController alloc] init];
+    
     centerController = [[UINavigationController alloc] initWithRootViewController:centerController];
     IIViewDeckController* deckController =  [[IIViewDeckController alloc]
                                              initWithCenterViewController:centerController leftViewController:leftController rightViewController:rightController];
     deckController.panningMode = IIViewDeckNavigationBarOrOpenCenterPanning;
     deckController.navigationControllerBehavior = IIViewDeckNavigationControllerContained;
     deckController.centerhiddenInteractivity = IIViewDeckCenterHiddenNotUserInteractiveWithTapToClose;
+    deckController.sizeMode = IIViewDeckViewSizeMode;
     //[deckController disablePanOverViewsOfClass:NSClassFromString(@"_UITableViewHeaderFooterContentView")];
     return deckController;
 }

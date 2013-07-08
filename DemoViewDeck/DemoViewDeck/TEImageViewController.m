@@ -1,26 +1,25 @@
 //
-//  TERightViewController.m
+//  TEImageViewController.m
 //  DemoViewDeck
 //
-//  Created by Tuấn Nguyễn Anh on 7/3/13.
+//  Created by Tuấn Nguyễn Anh on 7/8/13.
 //  Copyright (c) 2013 Tuấn Nguyễn Anh. All rights reserved.
 //
 
-#import "TERightViewController.h"
-#import <QuartzCore/QuartzCore.h>
-#import "IIViewDeckController.h"
+#import "TEImageViewController.h"
 
-@interface TERightViewController ()
+@interface TEImageViewController ()
 
 @end
 
-@implementation TERightViewController
+@implementation TEImageViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.title = @"Menu 3";
     }
     return self;
 }
@@ -28,8 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleLeftView)];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleRightView)];
+    
 }
 
 - (void)didReceiveMemoryWarning

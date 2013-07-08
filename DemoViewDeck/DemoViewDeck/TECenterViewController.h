@@ -11,10 +11,6 @@
 #import "TELeftViewController.h"
 #import "TERightViewController.h"
 
-@interface TECenterViewController : UIViewController <IIViewDeckControllerDelegate, MenuDelegate>
-{
-    TELeftViewController* leftController;
-    TERightViewController* rightController;
-}
+@interface TECenterViewController : UIViewController <IIViewDeckControllerDelegate>
 
 @end

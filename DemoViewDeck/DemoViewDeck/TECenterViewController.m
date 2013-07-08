@@ -27,33 +27,33 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    leftController = [[TELeftViewController alloc] init];
-    rightController = [[TERightViewController alloc] init];
-    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleLeftView)];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleRightView)];
-    
+    //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleRightView)];
+
     self.viewDeckController.rightSize = 400;
-    self.viewDeckController.leftController = leftController;
-    leftController.menuDelegate = self;
-    self.viewDeckController.leftSize = self.view.frame.size.width - 400;
+    self.viewDeckController.leftSize = 400;
 }
 
-- (void) didSelectMenu:(NSString *)menuName
+- (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    if ([menuName isEqualToString:@"menu 2"] || [menuName isEqualToString:@"menu 4"]) {
-        self.navigationItem.rightBarButtonItem = nil;
-        [self.viewDeckController closeOpenView];
-        //haveRightMenu = NO;
-    } else {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleRightView)];
-        [self.viewDeckController closeOpenView];
-        //haveRightMenu = YES;
-        rightController.labelDetail.text = [NSString stringWithFormat:@"This is details for %@", menuName];
-        self.viewDeckController.rightController = rightController;
-    }
+    self.viewDeckController.leftSize = 400;
+    self.viewDeckController.rightSize = 400;
+}
+
+- (NSUInteger) supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskAll;
+}
+
+- (UIInterfaceOrientation) preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationPortrait | UIInterfaceOrientationLandscapeLeft | UIInterfaceOrientationLandscapeRight;
+}
+
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning

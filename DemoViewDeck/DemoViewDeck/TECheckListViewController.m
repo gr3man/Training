@@ -36,8 +36,7 @@ static NSString *CellIdentifier = @"Cell";
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleRightView)];
 }
 
 #pragma mark - Table View Data Source Methods
@@ -48,8 +47,10 @@ static NSString *CellIdentifier = @"Cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView
-                             dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     cell.textLabel.text = self.snacks[indexPath.row];
     if (indexPath.row == 4) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;

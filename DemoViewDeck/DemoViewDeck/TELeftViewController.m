@@ -10,12 +10,14 @@
 #import "TEDisclosureViewController.h"
 #import "TECheckListViewController.h"
 #import "TEPrensentViewController.h"
+#import "TEImageViewController.h"
+#import "TEMoveViewController.h"
 
 @interface TELeftViewController ()
 
 @end
 
-NSString *tempText;
+BOOL haveRightMenu;
 @implementation TELeftViewController
 @synthesize menuDelegate, menus;
 
@@ -42,15 +44,36 @@ NSString *tempText;
     self.tableView.backgroundView = nil;
     [self.view setBackgroundColor:self.tableView.backgroundColor];
     number = @[@"one",@"two",@"three",@"four",@"five"];
+    NSArray *temps;
     
-    menus = @[[[TEDisclosureViewController alloc] init],
+    temps = @[[[TEDisclosureViewController alloc] init],
               [[TECheckListViewController alloc] init],
-              [[TEPrensentViewController alloc] init]];
+              [[TEPrensentViewController alloc] init],
+              [[TEImageViewController alloc] init],
+              [[TEMoveViewController alloc] init]];
+    
+    rightMenu = [[TERightViewController alloc] init];
+    self.viewDeckController.rightController = rightMenu;
+    rightMenu.labelDetail.text = [NSString stringWithFormat:@"This is detail for %@", self.viewDeckController.centerController.title];
+    haveRightMenu = YES;
+    
+    menus = [[NSMutableArray alloc] initWithCapacity:[temps count]];
+    
+    for (int i = 0; i < [temps count]; i++) {
+        UIViewController* tempController = temps[i];
+        tempController = [[UINavigationController alloc] initWithRootViewController:tempController];
+        [menus addObject:tempController];
+    }
 }
 
 - (void) viewDidDisappear:(BOOL)animated
 {
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+    if (haveRightMenu) {
+        self.viewDeckController.rightController = rightMenu;
+    } else {
+        self.viewDeckController.rightController = nil;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -92,19 +115,24 @@ NSString *tempText;
     return cell;
 }
 
+- (void) handleRightMenu
+{
+}
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    tempText = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
     //self.viewDeckController.centerController = menus[indexPath.row];
     [self.viewDeckController closeOpenView];
-    [self.viewDeckController.centerController.navigationController pushViewController:menus[indexPath.row] animated:YES];
+    self.viewDeckController.centerController = menus[indexPath.row];
+    rightMenu.labelDetail.text = [NSString stringWithFormat:@"This is detail for %@", self.viewDeckController.centerController.title];
     
-    UIViewController* tempController = menus[indexPath.row];
-    tempController = [[UINavigationController alloc] initWithRootViewController:tempController];
-    self.viewDeckController.centerController = tempController;
-    [menuDelegate didSelectMenu:tempText];
+    if (indexPath.row == 2 || indexPath.row == 4) {
+        haveRightMenu = NO;
+    } else {
+        haveRightMenu = YES;
+    }
 }
 
 @end

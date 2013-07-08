@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "IIViewDeckController.h"
+#import "TERightViewController.h"
 
 @protocol MenuDelegate <NSObject>
 
@@ -19,10 +20,11 @@
 {
     id<MenuDelegate> menuDelegate;
     NSArray *number;
-    NSArray *menus;
+    NSMutableArray *menus;
+    TERightViewController *rightMenu;
 }
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (copy, nonatomic) NSArray *menus;
+@property (strong, nonatomic) NSMutableArray *menus;
 @property (strong, nonatomic) id<MenuDelegate> menuDelegate;
 
 

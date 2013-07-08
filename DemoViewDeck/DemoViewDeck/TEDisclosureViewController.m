@@ -7,6 +7,8 @@
 //
 
 #import "TEDisclosureViewController.h"
+#import "IIViewDeckController.h"
+#import "TERightViewController.h"
 
 @interface TEDisclosureViewController ()
 
@@ -36,7 +38,11 @@ static NSString *CellIdentifier = @"Cell";
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleRightView)];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
 }
 
 #pragma mark - Table View Data Source Methods
@@ -49,6 +55,9 @@ static NSString *CellIdentifier = @"Cell";
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     cell.textLabel.text = self.movies[indexPath.row];
     return cell;

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7105830178ABB2900A1C052 /* TEMoveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C710582E178ABB2900A1C052 /* TEMoveViewController.m */; };
+		C7105831178ABB2900A1C052 /* TEMoveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C710582F178ABB2900A1C052 /* TEMoveViewController.xib */; };
 		C71D64D21789A3E300C6B26B /* TECenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C71D64D01789A3E200C6B26B /* TECenterViewController.m */; };
 		C71D64D31789A3E300C6B26B /* TECenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71D64D11789A3E200C6B26B /* TECenterViewController.xib */; };
 		C71D64DA1789CB1500C6B26B /* TEDisclosureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C71D64D81789CB1500C6B26B /* TEDisclosureViewController.m */; };
@@ -15,6 +17,9 @@
 		C71D64E01789D1AB00C6B26B /* TECheckListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71D64DE1789D1AA00C6B26B /* TECheckListViewController.xib */; };
 		C71D64E41789D51B00C6B26B /* TEPrensentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C71D64E21789D51A00C6B26B /* TEPrensentViewController.m */; };
 		C71D64E51789D51B00C6B26B /* TEPrensentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71D64E31789D51A00C6B26B /* TEPrensentViewController.xib */; };
+		C726C033178A9CF600584163 /* TEImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C726C031178A9CF600584163 /* TEImageViewController.m */; };
+		C726C034178A9CF600584163 /* TEImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C726C032178A9CF600584163 /* TEImageViewController.xib */; };
+		C726C036178A9D8500584163 /* img1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C726C035178A9D8500584163 /* img1.jpg */; };
 		C7C36DA01783E1E600E31FE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C36D9F1783E1E600E31FE7 /* UIKit.framework */; };
 		C7C36DA21783E1E600E31FE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C36DA11783E1E600E31FE7 /* Foundation.framework */; };
 		C7C36DA41783E1E600E31FE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C36DA31783E1E600E31FE7 /* CoreGraphics.framework */; };
@@ -41,6 +46,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C710582D178ABB2900A1C052 /* TEMoveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMoveViewController.h; sourceTree = "<group>"; };
+		C710582E178ABB2900A1C052 /* TEMoveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMoveViewController.m; sourceTree = "<group>"; };
+		C710582F178ABB2900A1C052 /* TEMoveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TEMoveViewController.xib; sourceTree = "<group>"; };
 		C71D64CF1789A3E200C6B26B /* TECenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TECenterViewController.h; sourceTree = "<group>"; };
 		C71D64D01789A3E200C6B26B /* TECenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TECenterViewController.m; sourceTree = "<group>"; };
 		C71D64D11789A3E200C6B26B /* TECenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TECenterViewController.xib; sourceTree = "<group>"; };
@@ -53,6 +61,10 @@
 		C71D64E11789D51900C6B26B /* TEPrensentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEPrensentViewController.h; sourceTree = "<group>"; };
 		C71D64E21789D51A00C6B26B /* TEPrensentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEPrensentViewController.m; sourceTree = "<group>"; };
 		C71D64E31789D51A00C6B26B /* TEPrensentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TEPrensentViewController.xib; sourceTree = "<group>"; };
+		C726C030178A9CF600584163 /* TEImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEImageViewController.h; sourceTree = "<group>"; };
+		C726C031178A9CF600584163 /* TEImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEImageViewController.m; sourceTree = "<group>"; };
+		C726C032178A9CF600584163 /* TEImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TEImageViewController.xib; sourceTree = "<group>"; };
+		C726C035178A9D8500584163 /* img1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img1.jpg; sourceTree = "<group>"; };
 		C7C36D9C1783E1E600E31FE7 /* DemoViewDeck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoViewDeck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7C36D9F1783E1E600E31FE7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C7C36DA11783E1E600E31FE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -146,18 +158,7 @@
 				C7C36DF6178401A800E31FE7 /* TERightViewController.h */,
 				C7C36DF7178401A800E31FE7 /* TERightViewController.m */,
 				C7C36DF8178401A800E31FE7 /* TERightViewController.xib */,
-				C71D64CF1789A3E200C6B26B /* TECenterViewController.h */,
-				C71D64D01789A3E200C6B26B /* TECenterViewController.m */,
-				C71D64D11789A3E200C6B26B /* TECenterViewController.xib */,
-				C71D64D71789CB1500C6B26B /* TEDisclosureViewController.h */,
-				C71D64D81789CB1500C6B26B /* TEDisclosureViewController.m */,
-				C71D64D91789CB1500C6B26B /* TEDisclosureViewController.xib */,
-				C71D64DC1789D1AA00C6B26B /* TECheckListViewController.h */,
-				C71D64DD1789D1AA00C6B26B /* TECheckListViewController.m */,
-				C71D64DE1789D1AA00C6B26B /* TECheckListViewController.xib */,
-				C71D64E11789D51900C6B26B /* TEPrensentViewController.h */,
-				C71D64E21789D51A00C6B26B /* TEPrensentViewController.m */,
-				C71D64E31789D51A00C6B26B /* TEPrensentViewController.xib */,
+				C7FD4559178A57E60046F4FD /* CenterController */,
 			);
 			path = DemoViewDeck;
 			sourceTree = "<group>";
@@ -165,6 +166,7 @@
 		C7C36DA61783E1E600E31FE7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C726C035178A9D8500584163 /* img1.jpg */,
 				C7D13D8E17851F1300589B7A /* five.png */,
 				C7D13D8F17851F1300589B7A /* four.png */,
 				C7D13D9017851F1300589B7A /* one.png */,
@@ -192,6 +194,31 @@
 				C7C36DC51783E51100E31FE7 /* IIWrapController.m */,
 			);
 			path = ViewDeck;
+			sourceTree = "<group>";
+		};
+		C7FD4559178A57E60046F4FD /* CenterController */ = {
+			isa = PBXGroup;
+			children = (
+				C71D64CF1789A3E200C6B26B /* TECenterViewController.h */,
+				C71D64D01789A3E200C6B26B /* TECenterViewController.m */,
+				C71D64D11789A3E200C6B26B /* TECenterViewController.xib */,
+				C71D64D71789CB1500C6B26B /* TEDisclosureViewController.h */,
+				C71D64D81789CB1500C6B26B /* TEDisclosureViewController.m */,
+				C71D64D91789CB1500C6B26B /* TEDisclosureViewController.xib */,
+				C71D64DC1789D1AA00C6B26B /* TECheckListViewController.h */,
+				C71D64DD1789D1AA00C6B26B /* TECheckListViewController.m */,
+				C71D64DE1789D1AA00C6B26B /* TECheckListViewController.xib */,
+				C71D64E11789D51900C6B26B /* TEPrensentViewController.h */,
+				C71D64E21789D51A00C6B26B /* TEPrensentViewController.m */,
+				C71D64E31789D51A00C6B26B /* TEPrensentViewController.xib */,
+				C726C030178A9CF600584163 /* TEImageViewController.h */,
+				C726C031178A9CF600584163 /* TEImageViewController.m */,
+				C726C032178A9CF600584163 /* TEImageViewController.xib */,
+				C710582D178ABB2900A1C052 /* TEMoveViewController.h */,
+				C710582E178ABB2900A1C052 /* TEMoveViewController.m */,
+				C710582F178ABB2900A1C052 /* TEMoveViewController.xib */,
+			);
+			name = CenterController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +288,9 @@
 				C71D64DB1789CB1500C6B26B /* TEDisclosureViewController.xib in Resources */,
 				C71D64E01789D1AB00C6B26B /* TECheckListViewController.xib in Resources */,
 				C71D64E51789D51B00C6B26B /* TEPrensentViewController.xib in Resources */,
+				C726C034178A9CF600584163 /* TEImageViewController.xib in Resources */,
+				C726C036178A9D8500584163 /* img1.jpg in Resources */,
+				C7105831178ABB2900A1C052 /* TEMoveViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +313,8 @@
 				C71D64DA1789CB1500C6B26B /* TEDisclosureViewController.m in Sources */,
 				C71D64DF1789D1AB00C6B26B /* TECheckListViewController.m in Sources */,
 				C71D64E41789D51B00C6B26B /* TEPrensentViewController.m in Sources */,
+				C726C033178A9CF600584163 /* TEImageViewController.m in Sources */,
+				C7105830178ABB2900A1C052 /* TEMoveViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

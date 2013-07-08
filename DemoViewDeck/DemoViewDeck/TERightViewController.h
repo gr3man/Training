@@ -10,5 +10,4 @@
 
 @interface TERightViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *labelDetail;
-
 @end
