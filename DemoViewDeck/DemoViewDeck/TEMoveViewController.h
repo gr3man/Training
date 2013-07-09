@@ -8,6 +8,12 @@
 
 #import "TECenterViewController.h"
 
-@interface TEMoveViewController : TECenterViewController
+@interface TEMoveViewController : TECenterViewController <UITableViewDataSource, UITableViewDelegate>
+{
+    NSMutableArray *words;
+}
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, copy) NSMutableArray *words;
 
 @end
